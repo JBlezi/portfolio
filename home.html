@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>Your Portfolio</title>
+    <style>
+      /* Additional custom styles can be added here */
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+    <!-- Navbar -->
+    <nav class="p-4 text-black" style="background-color: #F1F5FF">
+      <div class="flex items-center justify-between lg:mx-10 lg:mt-10">
+        <div>
+          <img src="./Goldappel Design Logo.png" alt="Your Logo" class="lg:h-12 h-8">
+        </div>
+<!--         <div class="wrap">
+          <button class="bg-transparent border border-black px-5 py-3 rounded-full text-sm lg:text-2xl font-light">CONTACT</button>
+        </div> -->
+        <div class='wrap'>
+          <div class='fill-wrap'>
+            <a href='#' class='btn btn-desert btn-b-t md:p-4 p-2'>CONTACT</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="h-screen flex flex-col justify-center items-left" style="background-color: #F1F5FF">
+      <div class="mx-10 lg:mx-24">
+        <h1 class="slide-up mb-8">
+          Digital Designer & <br> Web Developer
+        </h1>
+        <div>
+          <p class="slide-up-2 max-w-lg lg:max-w-2xl">
+            My goal is to make your business shine and bring out its true potential, by giving you a website that is as great as your business.
+          </p>
+      </div>
+      </div>
+    </section>
+
+    <!-- Project Showcase Section -->
+    <section class="py-12 px-4" style="background-color: #8E929C">
+      <div class="md:mx-10"  style="color: #F1F5FF">
+        <h2 class="text-2xl md:font-bold mb-8">SELECTED PROJECTS</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <a href="project2.html" class="block">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image">
+                  <img src="GRAIN.jpeg" alt="Project 2">
+                  <div class="overlay">
+                    <img src="STUDIO.jpeg" alt="Project 2" class="overlay-image">
+                  </div>
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL">LIVECODE COMMUNITY</h3>
+                  <h3 class="md:text-lg font-NORMAL text-right">WEB DEVELOPMENT</h3>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="project2.html" class="block">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image">
+                  <img src="STUDIO.jpeg" alt="Project 2">
+                  <div class="overlay">
+                    <img src="ART.webp" alt="Project 2" class="overlay-image">
+                  </div>
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL">LIVECODE COMMUNITY</h3>
+                  <h3 class="md:text-lg font-NORMAL text-right">WEB DEVELOPMENT</h3>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="project2.html" class="block">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image">
+                  <img src="ART.webp" alt="Project 2">
+                  <div class="overlay">
+                    <img src="BIKE.webp" alt="Project 2" class="overlay-image">
+                  </div>
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL">LIVECODE COMMUNITY</h3>
+                  <h3 class="md:text-lg font-NORMAL text-right">WEB DEVELOPMENT</h3>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="project2.html" class="block">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+                <div class="project-image">
+                  <img src="BIKE.webp" alt="Project 2">
+                  <div class="overlay">
+                    <img src="GRAIN.jpeg" alt="Project 2" class="overlay-image">
+                  </div>
+                </div>
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL">LIVECODE COMMUNITY</h3>
+                  <h3 class="md:text-lg font-NORMAL text-right">WEB DEVELOPMENT</h3>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media and Contact Section -->
+    <section class="py-12 px-4 flex flex-col items-center overflow-hidden justify-center" style="background-color: #F1F5FF">
+      <div class="flex justify-center mt-32">
+        <a href="https://figma.com" class="m-4 text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+          <i class="fab fa-figma self-center text-sm"></i>
+        </a>
+        <a href="https://dribbble.com" class="m-4 text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+          <i class="fab fa-dribbble self-center text-sm"></i>
+        </a>
+        <a href="https://github.com" class="m-4 text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+          <i class="fab fa-github self-center text-sm"></i>
+        </a>
+      </div>
+      <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">Looking for a Web Developer?</p>
+<!--       <button class="px-8 py-4 rounded-full mb-4 z-10 border border-black text-4xl" style="background-color: #F1F5FF">GET IN TOUCH</button>
+ -->  <div class='wrap'>
+        <div class='fill-wrap'>
+          <a href='#' class='btn btn-desert btn-b-t lg:text-4xl md:p-4'>GET IN TOUCH</a>
+
+          <a href='#' class='filli lg:text-4xl md:p-4'>GET IN TOUCH</a>
+        </div>
+      </div>
+      <div class="hire-me">
+        <p class="font-semibold">HIRE ME</h1>
+      </div>
+    </section>
+
+
+  <!-- Add the necessary script tag to include Tailwind CSS and any additional JavaScript libraries you plan to use -->
+      <!-- Vue content will be rendered here -->
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+
+</html>

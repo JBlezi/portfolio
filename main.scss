@@ -1,0 +1,327 @@
+html, body {
+
+}
+
+.hire-me {
+  font-size: 24vw;
+  margin-bottom: -25%;
+  opacity: 25%;
+}
+
+h1 {
+  line-height: 8rem;
+}
+
+/* .description {
+  line-height: 180% !important;
+} */
+
+section div {
+  overflow: hidden; /* Hide any overflow content */
+}
+
+.slide-up {
+  animation: slide-up 2s;
+  font-size: 6rem;
+}
+
+.slide-up-2 {
+  font-size: 1.5rem;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0.2;
+    line-height: 24rem;
+  }
+
+  to {
+    opacity: 1;
+    line-height: 8rem;
+  }
+}
+
+.project-image {
+  background-image: url(BIKE.webp);
+  background-size: cover;
+}
+
+.project-image:hover {
+  background-image: url(GRAIN.jpeg);
+  background-size: cover;
+  animation: slideInLeft 0.5s;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%)
+  }
+
+  to {
+    transform: translateX(0)
+  }
+}
+
+.project-image-2 {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.main-image {
+  display: block;
+  width: 100%;
+  height: 50vh;
+
+}
+
+.overlay {
+  position: absolute;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  transform: scale(1.5);
+}
+
+.overlay-image {
+  position: absolute;
+  transform: translate(-100%, 0%)
+}
+
+.overlay-left {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.project-image-2:hover .overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-image-2:hover .overlay-image {
+  transform: translate(0%, 0%)
+}
+
+.filli  {
+  display: inline-block;
+  position:relative;
+}
+
+.menu:before {
+  content:'';
+  background: #FFADAD;
+  position:absolute;
+  width:0%;
+  top:0;
+  left:0;
+  height:100%;
+  transition: 0.3s linear;
+  z-index:-1;
+}
+.menu:hover:before {
+  width:100%;
+}
+
+
+
+
+@media only screen and (min-width: 500px) {
+  .hire-me {
+    margin-bottom: -22%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .project-image {
+    height: 50vh !important;
+  }
+  .hire-me {
+    margin-bottom: -18%;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .hire-me {
+    margin-bottom: -18%;
+  }
+}
+
+.project-image {
+  height: 30vh;
+}
+
+
+
+$main: #F1F5FF;
+
+$desert-night: #222129;
+$bloom:        #ff7396;
+$ezra:         #5d63a4;
+$apollo:       #c1cad6;
+$apogee:       #fFF;
+$transition-bezier: 1.000, 0.000, 0.000, 1.000;
+$transition-len: 0.35s;
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ------------------------------ */
+/* ------- BUTTON STYLING ------- */
+/* ------------------------------ */
+
+/* ----------- Buttons ---------- */
+.wrap {
+  position: relative;
+
+  &:nth-of-type(2n) {
+    background: $main;
+  }
+}
+
+.fill-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.btn {
+  border-radius: 3px;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  border: 1px solid $apogee;
+  text-align: center;
+  z-index: 20;
+  transition: all $transition-len cubic-bezier($transition-bezier);
+}
+
+.btn:hover {
+  color: $apogee;
+}
+
+/* ----------- COLOURS ---------- */
+
+.btn-desert {
+  border-color: $desert-night;
+  color: $desert-night;
+
+  &::before,
+  &::after {
+    background: $desert-night;
+  }
+}
+
+/* --------- BUTTON FILL -------- */
+.btn::before,
+.btn::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all $transition-len cubic-bezier($transition-bezier);
+}
+
+.btn-r-l::after,
+.btn-l-r::after {
+  height: 100%;
+  width: 0;
+  top: 0;
+}
+
+.btn-r-l:hover::after,
+.btn-l-r:hover::after {
+  width: 100%;
+}
+
+.btn-t-b::after,
+.btn-b-t::after {
+  height: 0;
+  width: 100%;
+  left: 0;
+  border-radius: 3px;
+}
+
+.btn-t-b:hover::after,
+.btn-b-t:hover::after {
+  height: 100%;
+}
+
+.btn-i-o::after,
+.btn-i-o-r::after{
+  height: 100%;
+  top: 0;
+  left: 50%;
+  width: 0;
+}
+
+.btn-i-o:hover::after,
+.btn-i-o-r:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+.btn-i-o-r {
+  &::after {
+    border-radius: 80px;
+  }
+
+  &:hover::after {
+    border-radius: 3px;
+  }
+}
+
+.btn-o-i {
+  &:before,
+  &:after {
+    height: 100%;
+    top: 0;
+    width: 0;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.btn-o-i:hover::before,
+.btn-o-i:hover::after {
+  width: 50%;
+}
+
+.btn-l-r::after {
+  left: 0;
+}
+
+.btn-r-l::after {
+  right: 0;
+}
+
+.btn-t-b::after {
+  top: 0;
+}
+
+.btn-b-t::after {
+  bottom: 0;
+}
+
+.btn-l-r-r {
+  border-radius: 30px;
+
+  &:hover::after,
+  &:hover {
+    border-radius: 50px;
+    background: $desert-night;
+  }
+}
