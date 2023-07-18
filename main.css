@@ -97,8 +97,8 @@ section div {
 }
 
 .project-image-udo {
-  height: 40vh;
-  width: 40vw;
+  height: 50vh;
+  width: 100%;
 }
 
 .figma {
@@ -142,7 +142,7 @@ section div {
 }
 
 .horizontal-scroll {
-  max-width: 40vw;
+  width: 60vw;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -153,7 +153,11 @@ section div {
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  width: 200%;
+  height: 100%;
+  flex-wrap: nowrap;
 }
+
 
 
 /* ------------------------------ */
