@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="main.css">
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
- -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <title>Your Portfolio</title>
     <style>
       /* Additional custom styles can be added here */
@@ -44,25 +44,25 @@
     </section>
 
     <!-- Project Showcase Section -->
-    <section class="px-20">
-      <div class="flex flex-row">
-        <div class="flex flex-col justify-stretch my-20 w-full">
-          <img src="BIKE.webp" alt="bia" class="w-1/2 mb-20 project-image-udo">
-          <p class="w-1/2 inline-block">In the summer of 2022 I just graduated from LeWagon Bootcamp in Berlin, Germany, when one of my former classmates
+    <section class="px-20" id="project-showcase-section">
+      <div class="overflow-x-auto scrollbar-hide whitespace-nowrap">
+        <div class="mr-20 horizontal-scroll inline-block">
+          <img src="BIKE.webp" alt="bia" class="mb-20 project-image-udo">
+          <p class="whitespace-normal">In the summer of 2022 I just graduated from LeWagon Bootcamp in Berlin, Germany, when one of my former classmates
             approached me with an interesting proposition: to join him on a team of three Co-Founders with the goal of developing a
             mobile application in the Health Care Sector. With an outline of the project we got accepted to receive a 6-month
             scholarship at the Future Health Care Accelerator of BIA Berlin. </p>
         </div>
-        <div class="flex flex-col justify-stretch my-20 w-full">
-          <img src="ART.webp" alt="bia" class="w-1/2 mb-20 project-image-udo">
-          <p class="w-1/2 inline-block">In the summer of 2022 I just graduated from LeWagon Bootcamp in Berlin, Germany, when one of my former classmates
+        <div class="mr-20 horizontal-scroll inline-block">
+          <img src="ART.webp" alt="bia" class="mb-20 project-image-udo">
+          <p class="whitespace-normal">In the summer of 2022 I just graduated from LeWagon Bootcamp in Berlin, Germany, when one of my former classmates
             approached me with an interesting proposition: to join him on a team of three Co-Founders with the goal of developing a
             mobile application in the Health Care Sector. With an outline of the project we got accepted to receive a 6-month
             scholarship at the Future Health Care Accelerator of BIA Berlin. </p>
         </div>
-        <div class="flex flex-col justify-stretch my-20 w-full hidden">
-          <img src="GRAIN.jpeg" alt="bia" class="w-1/2 mb-20 project-image-udo">
-          <p class="w-1/2 inline-block">In the summer of 2022 I just graduated from LeWagon Bootcamp in Berlin, Germany, when one of my former classmates
+        <div class="horizontal-scroll inline-block">
+          <img src="GRAIN.jpeg" alt="bia" class="mb-20 project-image-udo">
+          <p class="whitespace-normal">In the summer of 2022 I just graduated from LeWagon Bootcamp in Berlin, Germany, when one of my former classmates
             approached me with an interesting proposition: to join him on a team of three Co-Founders with the goal of developing a
             mobile application in the Health Care Sector. With an outline of the project we got accepted to receive a 6-month
             scholarship at the Future Health Care Accelerator of BIA Berlin. </p>
@@ -121,6 +121,8 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>
     <script src="app.js" defer></script>
+
+    
 
   </body>
 
