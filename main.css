@@ -20,9 +20,6 @@ h1 {
 /* .description {
   line-height: 180% !important;
 } */
-section div {
-  overflow: hidden; /* Hide any overflow content */
-}
 
 .slide-up {
   animation: slide-up 2s;
@@ -79,11 +76,30 @@ section div {
   }
 }
 @media only screen and (min-width: 768px) {
+  section div {
+    overflow: hidden; /* Hide any overflow content */
+  }
   .project-image {
     height: 50vh !important;
   }
   .hire-me {
     margin-bottom: -18%;
+  }
+  .horizontal-scroll {
+    width: 60vw;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    width: 200%;
+    height: 100%;
+    flex-wrap: nowrap;
   }
 }
 @media only screen and (min-width: 1080px) {
@@ -141,22 +157,10 @@ section div {
   position: relative;
 }
 
-.horizontal-scroll {
-  width: 60vw;
-}
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  width: 200%;
-  height: 100%;
-  flex-wrap: nowrap;
-}
+
+
 
 
 
