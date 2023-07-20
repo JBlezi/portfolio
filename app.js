@@ -3,6 +3,7 @@ const app = Vue.createApp({
     return {
       showVideo: false,
       videoUrl: 'https://www.youtube.com/embed/NYzqGc2xBaw?autoplay=1&start=3921',
+      currentSection: '',
     };
   },
   methods: {
@@ -11,7 +12,28 @@ const app = Vue.createApp({
     },
   },
   mounted() {
-    if (window.matchMedia("(min-width: 767px)").matches){
+      // Hide the floating button in the hero section initially
+    gsap.set("#floating-button", { autoAlpha: 0 });
+
+    // GSAP ScrollTrigger to show/hide the floating button
+    ScrollTrigger.create({
+      trigger: "#project-showcase-section", // Set the trigger to the section where you want to show the button
+      start: "top 50%", // Adjust this value to control when the button should start showing
+      onEnter: () => gsap.to("#floating-button", { autoAlpha: 1 }), // Show the button when the trigger enters the viewport
+      onLeaveBack: () => gsap.to("#floating-button", { autoAlpha: 0 }), // Hide the button when the trigger leaves the viewport
+      onUpdate: self => {
+        // Add this onUpdate callback to update the currentSection property for your other logic if needed
+        if (self.isActive && self.direction === -1) {
+          this.currentSection = "project-showcase";
+        } else {
+          // Update the currentSection property based on other sections if needed
+          // For example:
+          // this.currentSection = "hero";
+        }
+      },
+    });
+
+    if (window.matchMedia("(min-width: 900px)").matches){
 
 
     gsap.registerPlugin(ScrollTrigger);

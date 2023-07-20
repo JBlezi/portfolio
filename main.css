@@ -1,21 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
   background: #F1F5FF;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 1500px;
 }
 
 .hire-me {
   font-size: 24vw;
-  margin-bottom: -25%;
-  opacity: 25%;
+  margin-bottom: -35%;
+  opacity: 15%;
 }
 
-h1 {
-  line-height: 8rem;
-}
 
 /* .description {
   line-height: 180% !important;
@@ -68,14 +69,17 @@ h1 {
   transform: translateX(0%);
 }
 
-
+.figma {
+  height: 25vh;
+  width: 100%;
+}
 
 @media only screen and (min-width: 500px) {
   .hire-me {
     margin-bottom: -22%;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
   section div {
     overflow: hidden; /* Hide any overflow content */
   }
@@ -88,9 +92,22 @@ h1 {
   .horizontal-scroll {
     width: 60vw;
   }
-
+  .project-image-udo {
+    height: 40vh !important;
+  }
+  .figma {
+    height: 70vh;
+    width: 100%;
+  }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+  .thumbnail {
+    height: 70vh !important;
+  }
+
+  .video-container {
+    height: 70vh !important;
   }
 
   /* Hide scrollbar for IE, Edge and Firefox */
@@ -113,12 +130,7 @@ h1 {
 }
 
 .project-image-udo {
-  height: 50vh;
-  width: 100%;
-}
-
-.figma {
-  height: 70vh;
+  height: 30vh;
   width: 100%;
 }
 
@@ -157,7 +169,74 @@ h1 {
   position: relative;
 }
 
+.floating-btn {
+  position: fixed; /* Allows relative positioning within the parent */
+  bottom: 20px;
+  right: 20px;
+  color: white;
+ /*  border: 1px solid black; */
+  background-color: black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  display: block; /* Hide the button by default */
+}
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Starting position and return to original position */
+  }
+  40% {
+    transform: translateY(-10px); /* Bounce up */
+  }
+  60% {
+    transform: translateY(-5px); /* Bounce down */
+  }
+}
+
+
+.floating-btn:hover {
+  animation: bounce 1s infinite; /* Apply the bounce animation on hover */
+}
+
+.zoom:hover i {
+  font-size: 120%;
+  transition: 0.15s ease-in;
+  color: white;
+}
+
+.zoom {
+  transition: 0.15s ease-in;
+  transform-origin: center;
+}
+
+.zoom:hover {
+  background-color: black;
+  transition: 0.15s ease-in;
+  transform: scale(1.2);
+}
+
+.zoom i {
+  transition: 0.15s ease-in;
+}
+
+.thumbnail {
+  height: 25vh;
+}
+
+.video-container {
+  height: 25vh;
+}
+
+.scroll-container-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
 
 
