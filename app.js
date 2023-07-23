@@ -15,6 +15,7 @@ const app = Vue.createApp({
       // Hide the floating button in the hero section initially
     gsap.set("#floating-button", { autoAlpha: 0 });
 
+
     // GSAP ScrollTrigger to show/hide the floating button
     ScrollTrigger.create({
       trigger: "#project-showcase-section", // Set the trigger to the section where you want to show the button
@@ -37,6 +38,8 @@ const app = Vue.createApp({
 
 
     gsap.registerPlugin(ScrollTrigger);
+
+
 
     let sections = gsap.utils.toArray(".horizontal-scroll");
 
@@ -98,6 +101,20 @@ const app = Vue.createApp({
         onToggle: self => console.log("active", self.isActive),
         id: "4"
       });
+
+/*       const scrollContainer = document.querySelector(".scroll-container");
+
+      // GSAP ScrollTrigger to pin the "pin-section" during the animation
+      ScrollTrigger.create({
+        trigger: ".pin-trigger",
+        start: "bottom bottom",
+        end: () => `+=${scrollContainer.scrollWidth - window.innerWidth}px`, // Adjust this value to control when the pin should end
+        pin: ".pin-trigger",
+        pinSpacing: false, // Set this to false to disable the spacing for pinned elements
+        scrub: true, // Enable smooth scrubbing effect
+      }); */
+
+
 
       // only show the relevant section's markers at any given time
       gsap.set(".gsap-marker-start, .gsap-marker-end, .gsap-marker-scroller-start, .gsap-marker-scroller-end", {autoAlpha: 0});
