@@ -111,6 +111,10 @@ body {
     height: 70vh !important;
   }
 
+  .hero-image {
+    height: 74vh;
+  }
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .scrollbar-hide {
     -ms-overflow-style: none;  /* IE and Edge */
@@ -252,8 +256,23 @@ body {
   min-width: calc(50% - 40px);
 }
 
-.hero-image {
-  height: 74vh;
+.link-styles {
+  color: red;
+}
+
+/* visited link */
+.link-styles:visited {
+  color: purple;
+}
+
+/* mouse over link */
+.link-styles:hover {
+  color: hotpink;
+}
+
+/* selected link */
+.link-styles:active {
+  color: blue;
 }
 
 
