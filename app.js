@@ -58,13 +58,9 @@ const app = Vue.createApp({
         xPercent = -76 * (sections.length - 1);
       } else if (window.matchMedia("(max-width: 1500px)").matches){
         xPercent = -75.5 * (sections.length - 1);
-      } else if (window.matchMedia("(max-width: 1600px)").matches){
-        xPercent = -75 * (sections.length - 1);
-      } else if (window.matchMedia("(max-width: 1700px)").matches){
-        xPercent = -74.5 * (sections.length - 1);
       } else {
         // For larger screens
-        xPercent = -73 * (sections.length - 1);
+        xPercent = -75 * (sections.length - 1);
       }
       return xPercent;
     };
