@@ -24,7 +24,7 @@ body {
 
 .slide-up {
   animation: slide-up 2s;
-  font-size: 6rem;
+  font-size: 3rem;
 }
 
 .slide-up-2 {
@@ -42,13 +42,13 @@ body {
   }
 }
 
-.project-image img {
-  height: 50vh;
-  width: 100%;
+.project-image-home {
+  height: 30vh;
 }
 
 .project-image {
   position: relative;
+  height: 30vh;
 }
 
 .overlay-image {
@@ -74,6 +74,10 @@ body {
   width: 100%;
 }
 
+.hero {
+  height: 30vh;
+}
+
 @media only screen and (min-width: 500px) {
   .hire-me {
     margin-bottom: -22%;
@@ -87,6 +91,16 @@ body {
   .project-image {
     height: 50vh !important;
   }
+
+  .project-image img {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .hero {
+    height: auto;
+  }
+
   .hire-me {
     margin-bottom: -18%;
   }
@@ -115,6 +129,14 @@ body {
     height: 74vh;
   }
 
+  .slide-up {
+    font-size: 6rem;
+  }
+
+  .project-image-home {
+    height: 50vh;
+  }
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .scrollbar-hide {
     -ms-overflow-style: none;  /* IE and Edge */
@@ -130,12 +152,8 @@ body {
   }
 }
 
-.project-image {
-  height: 30vh;
-}
-
 .project-image-udo {
-  
+
   background-color: #363D49;
 }
 
