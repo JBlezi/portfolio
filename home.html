@@ -25,14 +25,14 @@
         </div>
         <div class='wrap'>
           <div class='fill-wrap'>
-            <a href='udo-health.html' class='btn btn-desert btn-b-t md:p-4 p-2 rounded-full'>CONTACT</a>
+            <a href='contact.html' class='btn btn-desert btn-b-t md:p-4 p-2 rounded-full'>CONTACT</a>
           </div>
         </div>
       </div>
     </nav>
 
     <section class="h-screen flex flex-col justify-center items-left" style="background-color: #F1F5FF">
-      <div class="mx-10 lg:mx-24">
+      <div class="mx-10 md:m-0 lg:mx-12">
         <h1 class="slide-up mb-8">
           Digital Designer & <br> Web Developer
         </h1>
@@ -57,7 +57,7 @@
                 <div class="project-image">
                   <img src="images/bia.png" alt="BIA Front Page" class="project-image-home object-cover object-left">
                   <div class="overlay hidden md:block">
-                    <img src="images/UDO_protoype.png" alt="Udo Health Figma Prototype" class="overlay-image">
+                    <img src="images/UDO_protoype.png" alt="Udo Health Figma Prototype" class="overlay-image object-cover object-left">
                   </div>
                 </div>
 
@@ -75,7 +75,7 @@
                 <div class="project-image">
                   <img src="images/rakeit.jpeg" alt="LeWagon Berlin" class="project-image-home object-cover">
                   <div class="overlay hidden md:block">
-                    <img src="images/Presentation_thumbnail.png" alt="Youtube Presentation Custom Thumbnail" class="overlay-image">
+                    <img src="images/Presentation_thumbnail.png" alt="Youtube Presentation Custom Thumbnail" class="overlay-image object-cover">
                   </div>
                 </div>
 
@@ -124,36 +124,40 @@
       </div>
     </section>
 
-    <!-- Social Media and Contact Section -->
-    <section class="py-12 px-4 flex flex-col items-center overflow-hidden justify-center" style="background-color: #F1F5FF">
-      <div class="flex justify-center mt-32">
-        <a href="https://figma.com" class="m-4 text-xl rounded-full border border-black h-12 w-12 flex justify-center">
-          <i class="fab fa-figma self-center text-sm"></i>
-        </a>
-        <a href="https://dribbble.com" class="m-4 text-xl rounded-full border border-black h-12 w-12 flex justify-center">
-          <i class="fab fa-dribbble self-center text-sm"></i>
-        </a>
-        <a href="https://github.com" class="m-4 text-xl rounded-full border border-black h-12 w-12 flex justify-center">
-          <i class="fab fa-github self-center text-sm"></i>
-        </a>
-      </div>
-      <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">Looking for a Web Developer?</p>
-<!--       <button class="px-8 py-4 rounded-full mb-4 z-10 border border-black text-4xl" style="background-color: #F1F5FF">GET IN TOUCH</button>
- -->  <div class='wrap'>
-        <div class='fill-wrap'>
-          <a href='#' class='btn btn-desert btn-b-t lg:text-4xl md:p-4 rounded-full'>GET IN TOUCH</a>
-
+      <!-- Social Media and Contact Section -->
+      <section class="pb-20 px-4 flex flex-col relative items-center overflow-hidden justify-center" style="background-color: #F1F5FF">
+        <div class="flex justify-center mt-32 h-24">
+          <div class="h-16 w-16 m-4 p-2">
+            <a href="https://figma.com" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+              <i class="fab fa-figma self-center text-sm"></i>
+            </a>
+          </div>
+          <div class="h-16 w-16 m-4 p-2">
+            <a href="https://dribbble.com" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+              <i class="fab fa-dribbble self-center text-sm"></i>
+            </a>
+          </div>
+          <div class="h-16 w-16 m-4 p-2">
+            <a href="https://github.com" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+              <i class="fab fa-github self-center text-sm"></i>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="hire-me">
-        <p class="font-semibold">HIRE ME</h1>
+        <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">Looking for a Web Developer?</p>
+        <div class='wrap'>
+          <div class='fill-wrap'>
+            <a href='#' class='btn btn-desert btn-b-t lg:text-4xl p-4 md:p-6 rounded-full'>GET IN TOUCH</a>
+          </div>
         </div>
 
-<!--         <div class="z-10">
-          <a href='#' class='filli lg:text-4xl md:p-4 border-2 border-black rounded-full'><span id="button-text" class="lg:text-4xl md:p-4">GET IN TOUCH</span></a>
-        </div> -->
+        <a href="#top" class="floating-btn z-30" v-if="currentSection !== 'hero'" id="floating-button">
+          <i class="fas fa-chevron-up"></i>
+        </a>
 
-    </section>
+        <div class="hire-me">
+          <p class="font-semibold">HIRE ME</h1>
+        </div>
+      </section>
 
 
   <!-- Add the necessary script tag to include Tailwind CSS and any additional JavaScript libraries you plan to use -->
