@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
     <title>Your Portfolio</title>
     <style>
@@ -20,8 +22,9 @@
     <!-- Navbar -->
     <nav class="p-4 text-black" style="background-color: #F1F5FF">
       <div class="flex items-center justify-between lg:mx-10 lg:mt-10">
-        <div>
-          <img src="images/Goldappel Design Logo.png" alt="Your Logo" class="lg:h-12 h-8">
+        <div class="flex flex-row">
+          <img src="images/gpt_julius1.png" alt="Your Logo" class="lg:h-12 h-10 rounded-full">
+          <span class="my-2 md:ml-8 ml-2 md:text-3xl logo">J K Design — 23</span>
         </div>
         <div class='wrap'>
           <div class='fill-wrap'>
@@ -38,14 +41,14 @@
         </h1>
         <div>
           <p class="slide-up-2 max-w-lg lg:max-w-2xl">
-            My goal is to make your business shine and bring out its true potential, by giving you a website that is as great as your business.
+            My goal is to make your business shine<span class="hidden md:inline"> and bring out its true potential,</span> by giving you a website that is as great as your business.
           </p>
       </div>
       </div>
     </section>
 
     <!-- Project Showcase Section -->
-    <section class="p-6 md:pt-20 md:pb-10" style="background-color: #8E929C">
+    <section class="p-6 md:pt-20 md:pb-10" style="background-color: #8E929C" id="project-showcase-section">
       <div class="md:mx-10"  style="color: #F1F5FF">
         <h2 class="text-2xl md:font-bold mb-10">SELECTED PROJECTS</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">

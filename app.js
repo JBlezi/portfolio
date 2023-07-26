@@ -13,6 +13,7 @@ const app = Vue.createApp({
   },
   mounted() {
       // Hide the floating button in the hero section initially
+
     gsap.set("#floating-button", { autoAlpha: 0 });
 
 
@@ -35,54 +36,50 @@ const app = Vue.createApp({
     });
 
     if (window.matchMedia("(min-width: 900px)").matches){
+      gsap.registerPlugin(ScrollTrigger);
 
+      let sections = gsap.utils.toArray(".horizontal-scroll");
 
-    gsap.registerPlugin(ScrollTrigger);
+      const updateXPercent = () => {
+        let xPercent;
+        if (window.matchMedia("(max-width: 1000px)").matches) {
+          // For small screens (max-width: 767px)
+          xPercent = -78 * (sections.length - 1);
+        } else if (window.matchMedia("(max-width: 1100px)").matches){
+          xPercent = -78 * (sections.length - 1);
+        } else if (window.matchMedia("(max-width: 1200px)").matches){
+          xPercent = -78 * (sections.length - 1);
+        } else if (window.matchMedia("(max-width: 1300px)").matches){
+          xPercent = -77 * (sections.length - 1);
+        } else if (window.matchMedia("(max-width: 1400px)").matches){
+          xPercent = -76 * (sections.length - 1);
+        } else if (window.matchMedia("(max-width: 1500px)").matches){
+          xPercent = -75.5 * (sections.length - 1);
+        } else {
+          // For larger screens
+          xPercent = -75 * (sections.length - 1);
+        }
+        return xPercent;
+      };
 
+      // Update the xPercent value whenever the window is resized
+      window.addEventListener("resize", () => {
+        scrollTween.vars.xPercent = updateXPercent();
+        scrollTween.invalidate(); // Invalidate the animation for smooth updates
+      });
 
-
-    let sections = gsap.utils.toArray(".horizontal-scroll");
-
-    const updateXPercent = () => {
-      let xPercent;
-      if (window.matchMedia("(max-width: 1000px)").matches) {
-        // For small screens (max-width: 767px)
-        xPercent = -78 * (sections.length - 1);
-      } else if (window.matchMedia("(max-width: 1100px)").matches){
-        xPercent = -77.5 * (sections.length - 1);
-      } else if (window.matchMedia("(max-width: 1200px)").matches){
-        xPercent = -77 * (sections.length - 1);
-      } else if (window.matchMedia("(max-width: 1300px)").matches){
-        xPercent = -76.5 * (sections.length - 1);
-      } else if (window.matchMedia("(max-width: 1400px)").matches){
-        xPercent = -76 * (sections.length - 1);
-      } else if (window.matchMedia("(max-width: 1500px)").matches){
-        xPercent = -75.5 * (sections.length - 1);
-      } else {
-        // For larger screens
-        xPercent = -75 * (sections.length - 1);
-      }
-      return xPercent;
-    };
-
-    // Update the xPercent value whenever the window is resized
-    window.addEventListener("resize", () => {
-      scrollTween.vars.xPercent = updateXPercent();
-      scrollTween.invalidate(); // Invalidate the animation for smooth updates
-    });
-
-    let scrollTween = gsap.to(sections, {
-      xPercent: updateXPercent(),
-      ease: "none", // <-- IMPORTANT!
-      scrollTrigger: {
-        trigger: ".scroll-container",
-        start: "top top",
-        pin: true,
-        scrub: true,
-        //snap: directionalSnap(1 / (sections.length - 1)),
-        end: "+=3000"
-      }
-    });
+      let scrollTween = gsap.to(sections, {
+        xPercent: updateXPercent(),
+        ease: "none", // <-- IMPORTANT!
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "top top",
+          pin: true,
+          scrub: true,
+          //snap: directionalSnap(1 / (sections.length - 1)),
+          end: "+=3000"
+        }
+      });
 
 
       // green section
