@@ -33,24 +33,43 @@ body {
 } */
 
 .slide-up {
-  animation: slide-up 2s;
+  animation: slide-up 1.5s ease;
   font-size: 3rem;
 }
 
 .slide-up-2 {
-  font-size: 1.5rem;
+  animation: slide-up-2 2s cubic-bezier(.08,.31,0,.99);
+  font-size: 1.5rem !important;
 }
 
 @keyframes slide-up {
-  from {
-    opacity: 0.2;
-    line-height: 24rem;
+  0% {
+    opacity: 0;
+    margin-top: 120rem;
   }
-  to {
+  50% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
-    line-height: 8rem;
+    margin-top: inherit;
   }
 }
+
+@keyframes slide-up-2 {
+  0% {
+    opacity: 0;
+    margin-top: 50rem;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: inherit;
+  }
+}
+
 
 .project-image-home {
   height: 30vh;
