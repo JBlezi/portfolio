@@ -303,7 +303,7 @@ body {
 }
 
 .link-styles {
-  color: red;
+  color: blue;
 }
 
 /* visited link */
@@ -318,7 +318,7 @@ body {
 
 /* selected link */
 .link-styles:active {
-  color: blue;
+  color: red;
 }
 
 /* CSS */
