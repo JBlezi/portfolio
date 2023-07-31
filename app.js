@@ -1,6 +1,18 @@
+
+// Create the I18n instance
+const i18n = VueI18n.createI18n({
+  locale: 'en', // Set the default locale (you can change this based on user preferences)
+  messages: {
+    en: enMessages,
+    de: deMessages,
+    // Add more locales here if needed
+  },
+});
+
 const app = Vue.createApp({
   data() {
     return {
+      currentLanguage: 'en', // Set the default language here
       showVideo: false,
       videoUrl: 'https://www.youtube.com/embed/NYzqGc2xBaw?autoplay=1&start=3921',
       currentSection: '',
@@ -10,6 +22,10 @@ const app = Vue.createApp({
     playVideo() {
       this.showVideo = true;
     },
+    toggleLanguage(language) {
+      this.currentLanguage = language;
+      this.$i18n.locale = language; // Update the i18n locale when language is toggled
+    }
   },
   mounted() {
       // Hide the floating button in the hero section initially
@@ -113,4 +129,5 @@ const app = Vue.createApp({
   }
 });
 
+app.use(i18n);
 app.mount('#app');

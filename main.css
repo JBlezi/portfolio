@@ -16,6 +16,16 @@ body {
   max-width: 1500px;
 }
 
+button {
+  color: #666;
+  cursor: pointer;
+}
+
+.active {
+  color: black;
+  font-weight: bold;
+}
+
 .hire-me {
   font-size: 22vw;
   margin-bottom: -36%;

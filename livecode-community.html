@@ -28,8 +28,13 @@
    <!--        <div>
             <img src="images/Goldappel Design Logo.png" alt="Your Logo" class="lg:h-12 h-6">
           </div> -->
-          <div class='wrap'>
+          <div class='wrap flex flex-row'>
             <div class='fill-wrap'>
+              <div class="flex flex-row mx-4">
+                <button @click="toggleLanguage('en')" :class="{ active: currentLanguage === 'en' }">EN<span style="color:black">/</span></button>
+                <button @click="toggleLanguage('de')" :class="{ active: currentLanguage === 'de' }">DE</button>
+                <!-- Your other content here -->
+              </div>
               <a href='index.html' class='md:p-4 p-2 md:text-2xl md:font-semibold'>HOME</a>
             </div>
           </div>
@@ -43,18 +48,11 @@
         <div class="p-10 md:p-0">
           <div class="flex flex-row justify-between lg:px-20 mb-10">
             <h1 class="md:text-2xl text-lg md:my-10 mb-6">Livecode Community</h1>
-            <h2 class="md:text-2xl text-lg md:my-10 text-gray-500 text-right">Full Stack Web Development</h2>
+            <h2 class="md:text-2xl text-lg md:my-10 text-gray-500 text-right">{{ $t('hero.category') }}</h2>
           </div>
-          <p class="lg:px-20 md:text-justify md:text-lg">
-            <a href="https://www.lewagon.com/de/berlin" target="_blank" class="link-styles">LeWagon Bootcamp for Full Stack Web Development</a>
-            is a 10 week intensive
-            coding course that teaches participants the basics of Web Development including conceptualization, design, front- and
-            backend development. Having already had experience with frontend development and a basic knowledge of HTML & CSS, I
-            decided it was time to take my coding skills to the next level and learn more about what happens in the background.
-            <br><br> As the final project of the bootcampt my idea was to create a platform to fix the very problem that every
-            person learning to code is confronted with on a daily basis. Who can I ask when I don't know the answer to a coding
-            problem? The solution was <code>Livecode Community</code>, a platform enabling aspiring coders to post their specific
-            coding problems and enter into a video chat with someone who knows the solution.</p>
+          <p class="lg:px-20 md:text-justify md:text-lg" v-html="$t('hero.description')">
+
+            </p>
         </div>
       </section>
 
@@ -173,7 +171,79 @@
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-i18n@9.1.7/dist/vue-i18n.global.js"></script>
+    <script>
+      const enMessages = {
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "CONTACT"
+        },
+        "hero": {
+          "title": "Livecode Community",
+          "category": "Full Stack Web Development",
+          "description": "<a href='https://www.lewagon.com/de/berlin' target='_blank' class='link-styles'>LeWagon Bootcamp for Full Stack Web Development</a> is a 10 week intensive coding course that teaches participants the basics of Web Development including conceptualization, design, front- andbackend development. Having already had experience with frontend development and a basic knowledge of HTML & CSS, I decided it was time to take my coding skills to the next level and learn more about what happens in the background.<br><br> As the final project of the bootcampt my idea was to create a platform to fix the very problem that every person learning to code is confronted with on a daily basis. Who can I ask when I don't know the answer to a coding problem? The solution was <code>Livecode Community</code>, a platform enabling aspiring coders to post their specific coding problems and enter into a video chat with someone who knows the solution."
+        },
+        "projectShowcase": {
+          "selectedProjects": "Our Product Development Journey",
+          "project1": {
+            "title": "The Homepage",
+            "description": "Upon registering as a user by signing up with your email and chosen password, the first thing you see is the ticket homepage showing you all the existing tickets from other users. Color coding indicates the status of every ticket - green indicating open tickets, orange for tickets in progress, and white for tickets who have already been answered and are therefore closed. The search bar at the top makes it possible to search all existing tickets to check if your specific question might already have been answered."
+          },
+          "project2": {
+            "title": "Creating your own Request",
+            "description": "If you had a go checking the existing requests but didn't find what you are looking for, then it's time to raise your own ticket and create your own request. Upon doing that you have to give your request a title, a proper description, and choose the languages that relate to your current problem. Once you've inputted all the necessary information it is time to hit the Create Ticket button and wait for an expert to accept your request!"
+          },
+          "project3": {
+            "title": "Video Call & Screen Sharing",
+            "description": "Once someone accepted your ticket, you will receive a notification in your messages tab and you can answer that person in the chat. Once you have established that your expert is ready and has time to explain to you how to solve the problem, you can both hop on a video call and speak to each other live. Additionally, you can also share your own screen with the other person to show your code and make sure they understand the details of your specific problem."
+          },
+          "project4": {
+            "title": "Profiles & Reviews",
+            "description": "Once you've fixed the coding problem and finished the call, it is time to leave your evaluation for the call through a review form. Another feature of the platform is the possibility to look at other users' profiles and see their past reviews to determine whether you would like to accept help from them or not. Profiles include a name, short description, a changeable profile picture, and reviews from past tickets in a five-star rating format."
+          }
+        },
+        "socialContact": {
+          "lookingForDev": "Looking for a Web Developer?",
+          "getInTouch": "GET IN TOUCH",
+          "hireMe": "HIRE ME"
+        }
+      };
+      const deMessages = {
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "KONTAKT"
+        },
+        "hero": {
+          "title": "Livecode Community",
+          "category": "Vollspektrum Webentwicklung",
+          "description": "{linkStart}LeWagon Bootcamp für Vollspektrum Webentwicklung{linkEnd} ist ein 10-wöchiger Intensivkurs, der den Teilnehmern die Grundlagen der Webentwicklung vermittelt, einschließlich Konzeptualisierung, Design, Frontend- und Backend-Entwicklung. Da ich bereits Erfahrung mit der Frontend-Entwicklung und grundlegendes Wissen in HTML & CSS hatte, entschied ich mich, meine Programmierkenntnisse auf die nächste Stufe zu heben und mehr darüber zu lernen, was im Hintergrund passiert. Als Abschlussprojekt des Bootcamps hatte ich die Idee, eine Plattform zu erstellen, um das Problem zu lösen, dem sich jeder Mensch beim Programmierenlernen täglich gegenübersieht. Wen kann ich fragen, wenn ich die Antwort auf ein Programmierproblem nicht kenne? Die Lösung war Livecode Community, eine Plattform, die angehenden Entwicklern ermöglicht, ihre spezifischen Programmierprobleme zu veröffentlichen und in einen Videochat mit jemandem einzutreten, der die Lösung kennt."
+        },
+        "projectShowcase": {
+          "selectedProjects": "Unsere Produktentwicklungsreise",
+          "project1": {
+            "title": "Die Homepage",
+            "description": "Nach der Registrierung als Benutzer, indem Sie sich mit Ihrer E-Mail und Ihrem gewählten Passwort anmelden, sehen Sie zuerst die Ticket-Homepage, auf der Ihnen alle vorhandenen Tickets anderer Benutzer angezeigt werden. Die Farbcodierung gibt den Status jedes Tickets an - grün für offene Tickets, orange für Tickets in Bearbeitung und weiß für Tickets, die bereits beantwortet wurden und daher geschlossen sind. Die Suchleiste oben ermöglicht es, alle vorhandenen Tickets zu durchsuchen, um zu prüfen, ob Ihre spezifische Frage möglicherweise bereits beantwortet wurde."
+          },
+          "project2": {
+            "title": "Erstellen Sie Ihre eigene Anfrage",
+            "description": "Wenn Sie bereits alle vorhandenen Anfragen überprüft haben, aber nicht das gefunden haben, wonach Sie suchen, ist es an der Zeit, Ihre eigene Anfrage zu erstellen und Ihre eigene Anfrage zu erstellen. Dabei müssen Sie Ihrer Anfrage einen Titel, eine geeignete Beschreibung und die Sprachen zuweisen, die sich auf Ihr aktuelles Problem beziehen. Sobald Sie alle erforderlichen Informationen eingegeben haben, ist es an der Zeit, auf die Schaltfläche 'Ticket erstellen' zu klicken und auf die Annahme Ihrer Anfrage durch einen Experten zu warten!"
+          },
+          "project3": {
+            "title": "Videoanruf und Bildschirmfreigabe",
+            "description": "Sobald jemand Ihre Anfrage akzeptiert hat, erhalten Sie eine Benachrichtigung in Ihrem Nachrichten-Tab, und Sie können dieser Person im Chat antworten. Sobald Sie festgestellt haben, dass Ihr Experte bereit ist und Zeit hat, Ihnen zu erklären, wie das Problem gelöst wird, können Sie beide einen Videoanruf starten und miteinander sprechen. Darüber hinaus können Sie Ihren Bildschirm für die andere Person freigeben, um Ihren Code anzuzeigen und sicherzustellen, dass sie die Details Ihres spezifischen Problems verstehen."
+          },
+          "project4": {
+            "title": "Profile & Bewertungen",
+            "description": "Sobald Sie das Programmierproblem behoben und den Anruf beendet haben, ist es an der Zeit, Ihre Bewertung für den Anruf über ein Bewertungsformular abzugeben. Eine weitere Funktion der Plattform besteht darin, die Profile anderer Benutzer anzusehen und ihre vergangenen Bewertungen einzusehen, um zu entscheiden, ob Sie Hilfe von ihnen annehmen möchten oder nicht. Profile enthalten einen Namen, eine kurze Beschreibung, ein änderbares Profilbild und Bewertungen von vergangenen Anfragen in einem Fünf-Sterne-Bewertungsformat."
+          }
+        },
+        "socialContact": {
+          "lookingForDev": "Suchen Sie einen Webentwickler?",
+          "getInTouch": "IN KONTAKT KOMMEN",
+          "hireMe": "MICH EINSTELLEN"
+        }
+      };
+    </script>
     <script src="app.js" defer></script>
 
   </body>
