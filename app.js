@@ -35,7 +35,7 @@ const app = Vue.createApp({
       },
     });
 
-    if (window.matchMedia("(min-width: 900px)").matches){
+/*     if (window.matchMedia("(min-width: 900px)").matches){
       gsap.registerPlugin(ScrollTrigger);
 
       let sections = gsap.utils.toArray(".horizontal-scroll");
@@ -95,18 +95,6 @@ const app = Vue.createApp({
         id: "4"
       });
 
-/*       const scrollContainer = document.querySelector(".scroll-container");
-
-      // GSAP ScrollTrigger to pin the "pin-section" during the animation
-      ScrollTrigger.create({
-        trigger: ".pin-trigger",
-        start: "bottom bottom",
-        end: () => `+=${scrollContainer.scrollWidth - window.innerWidth}px`, // Adjust this value to control when the pin should end
-        pin: ".pin-trigger",
-        pinSpacing: false, // Set this to false to disable the spacing for pinned elements
-        scrub: true, // Enable smooth scrubbing effect
-      }); */
-
 
 
       // only show the relevant section's markers at any given time
@@ -121,7 +109,7 @@ const app = Vue.createApp({
           onToggle: self => gsap.to(".marker-" + (i+1), {duration: 0.25, autoAlpha: self.isActive ? 1 : 0})
         });
       });
-    }
+    } */
   }
 });
 
