@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/gpt_julius1_favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/cool_julius1.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="main.css">
@@ -24,25 +24,30 @@
     <nav class="p-4 text-black" style="background-color: #F1F5FF">
       <div class="flex items-center justify-between lg:mx-10 lg:mt-10">
         <a href="index.html" class="flex flex-row">
-          <img src="images/gpt_julius1.png" alt="Your Logo" class="lg:h-12 h-10 rounded-full">
+          <img src="images/cool_julius1.png" alt="Your Logo" class="lg:h-12 h-10 rounded-full">
           <span class="my-2 md:ml-8 ml-2 md:text-3xl logo">J B Design — 23</span>
         </a>
-        <div class='wrap'>
+        <div class='wrap flex flex-row'>
           <div class='fill-wrap'>
-            <a href='contact.html' class='btn btn-desert btn-b-t md:p-4 p-2 rounded-full'>CONTACT</a>
+            <div class="flex flex-row mx-4">
+              <button @click="toggleLanguage('en')" :class="{ active: currentLanguage === 'en' }">EN<span style="color:black">/</span></button>
+              <button @click="toggleLanguage('de')" :class="{ active: currentLanguage === 'de' }">DE</button>
+              <!-- Your other content here -->
+            </div>
+            <a href='contact.html' class='btn btn-desert btn-b-t md:p-4 p-2 rounded-full'>{{ $t('navbar.contact') }}</a>
           </div>
         </div>
       </div>
     </nav>
 
     <section class="h-screen flex flex-col justify-center items-left -mt-10 md:m-0" style="background-color: #F1F5FF">
-      <div class="mx-10 md:m-0 lg:mx-12">
-        <h1 class="slide-up mb-8">
-          Digital Designer &<br> Web Developer
+      <div class="mx-10 md:m-0 md:mx-12">
+        <h1 class="slide-up mb-8" v-html="$t('hero.title')">
+
         </h1>
         <div>
-          <p class="slide-up-2 max-w-lg lg:max-w-2xl">
-            My goal is to make your business shine<span class="hidden md:inline"> and bring out its true potential,</span> by giving you a website that is as great as your business.
+          <p class="slide-up-2 max-w-lg lg:max-w-2xl" v-html="$t('hero.description')">
+
           </p>
       </div>
       </div>
@@ -51,7 +56,7 @@
     <!-- Project Showcase Section -->
     <section class="p-6 md:pt-20 md:pb-10" style="background-color: #8E929C" id="project-showcase-section">
       <div class="md:mx-10"  style="color: #F1F5FF">
-        <h2 class="text-2xl md:font-bold mb-10">SELECTED PROJECTS</h2>
+        <h2 class="text-2xl md:font-bold mb-10">{{ $t('projectShowcase.selectedProjects') }}</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
           <a href="udo-health.html" class="block mb-10">
@@ -59,7 +64,7 @@
               <div class="flex flex-col justify-end">
 
                 <div class="project-image">
-                  <img src="images/bia.png" alt="BIA Front Page" class="project-image-home object-cover object-left">
+                  <img src="images/bia_plain.png" alt="BIA Front Page" class=" object-cover">
                   <div class="overlay hidden md:block">
                     <img src="images/Frame_Selection.png" alt="Udo Health Figma Prototype" class="overlay-image object-cover">
                   </div>
@@ -77,7 +82,7 @@
               <div class="flex flex-col justify-end">
 
                 <div class="project-image">
-                  <img src="images/rakeit.jpeg" alt="LeWagon Berlin" class="project-image-home object-cover">
+                  <img src="images/lewagon_plain.png" alt="LeWagon Berlin" class="project-image-home object-cover">
                   <div class="overlay hidden md:block">
                     <img src="images/Presentation.png" alt="Youtube Presentation Custom Thumbnail" class="overlay-image object-cover object-right">
                   </div>
@@ -85,7 +90,7 @@
 
                 <div class="flex justify-between mt-2">
                   <h3 class="md:text-lg font-NORMAL">LIVECODE COMMUNITY</h3>
-                  <h3 class="md:text-lg font-NORMAL text-right text-black">FULL STACK WEB DEVELOPMENT</h3>
+                  <h3 class="md:text-lg font-NORMAL text-right text-black">{{ $t('projectShowcase.project2.category') }}</h3>
                 </div>
               </div>
             </div>
@@ -147,10 +152,10 @@
             </a>
           </div>
         </div>
-        <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">Looking for a Web Developer?</p>
+        <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">{{ $t('socialContact.lookingForDev') }}</p>
         <div class='wrap'>
           <div class='fill-wrap'>
-            <a href='contact.html' class='btn btn-desert btn-b-t lg:text-4xl p-4 md:p-6 rounded-full'>GET IN TOUCH</a>
+            <a href='contact.html' class='btn btn-desert btn-b-t lg:text-4xl p-4 md:p-6 rounded-full'>{{ $t('socialContact.getInTouch') }}</a>
           </div>
         </div>
 
@@ -167,6 +172,66 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-i18n@9.1.7/dist/vue-i18n.global.js"></script>
+    <script>
+      // English language data
+      const enMessages = {
+        // Your English translations here
+
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "CONTACT"
+        },
+        "hero": {
+          "title": "Digital Designer &<br> Web Developer",
+          "description": "My goal is to make your business shine <span class='hidden md:inline'>and bring out its true potential,</span> by giving you a website that is as great as your business."
+        },
+        "projectShowcase": {
+          "selectedProjects": "SELECTED PROJECTS",
+          "project1": {
+            "title": "UDO HEALTH",
+            "category": "APP DESIGN"
+          },
+          "project2": {
+            "title": "LIVECODE COMMUNITY",
+            "category": "FULL STACK WEB DEVELOPMENT"
+          }
+        },
+        "socialContact": {
+          "lookingForDev": "Looking for a Web Developer?",
+          "getInTouch": "GET IN TOUCH",
+          "hireMe": "HIRE ME"
+        }
+      };
+      // German language data
+      const deMessages = {
+        // Your German translations here
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "KONTAKT"
+        },
+        "hero": {
+          "title": "Digital Designer & Webentwickler",
+          "description": "Ich bringe ihr Unternehmen zum Strahlen, mit einer Website, die <span class='hidden md:inline'>Ihr Wahres Potential audrückt und </span>so großartig ist, wie das, was Sie tun."
+        },
+        "projectShowcase": {
+          "selectedProjects": "AUSGEWÄHLTE PROJEKTE",
+          "project1": {
+            "title": "UDO HEALTH",
+            "category": "APP DESIGN"
+          },
+          "project2": {
+            "title": "LIVECODE COMMUNITY",
+            "category": "FULL STACK WEBENTWICKLUNG"
+          }
+        },
+        "socialContact": {
+          "lookingForDev": "Webentwickler gesucht?",
+          "getInTouch": "KONTAKTIEREN",
+          "hireMe": "ENGAGIEREN SIE MICH"
+        }
+      };
+    </script>
     <script src="app.js"></script>
 
   </body>

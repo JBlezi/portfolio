@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/gpt_julius1_favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/cool_julius.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="main.css">
@@ -24,14 +24,19 @@
     <nav class="p-4 text-black" style="background-color: #F1F5FF">
       <div class="flex items-center justify-between lg:mx-10 lg:mt-10">
         <a href="index.html" class="flex flex-row">
-          <img src="images/gpt_julius1.png" alt="Your Logo" class="lg:h-12 h-10 rounded-full">
+          <img src="images/cool_julius1.png" alt="Your Logo" class="lg:h-12 h-10 rounded-full">
           <span class="my-2 md:ml-8 ml-2 md:text-3xl logo">J B Design — 23</span>
         </a>
  <!--        <div>
           <img src="images/Goldappel Design Logo.png" alt="Your Logo" class="lg:h-12 h-6">
         </div> -->
-        <div class='wrap'>
+        <div class='wrap flex flex-row'>
           <div class='fill-wrap'>
+            <div class="flex flex-row mx-4">
+              <button @click="toggleLanguage('en')" :class="{ active: currentLanguage === 'en' }">EN<span style="color:black">/</span></button>
+              <button @click="toggleLanguage('de')" :class="{ active: currentLanguage === 'de' }">DE</button>
+              <!-- Your other content here -->
+            </div>
             <a href='index.html' class='md:p-4 p-2 md:text-2xl md:font-semibold'>HOME</a>
           </div>
         </div>
@@ -41,84 +46,86 @@
 
     <section class="md:pt-20 md:px-20 lg:px-0 md:-mt-20" id="hero-section">
       <div class="hero-image overflow-hidden">
-        <img src="images/bia.png" alt="bia" class="object-cover object-left hero">
+        <img src="images/udo_health_banner.png" alt="bia" class="object-cover object-left hero">
       </div>
       <div class="p-10 md:p-0">
         <div class="flex flex-row justify-between lg:px-20 mb-10">
           <h1 class="md:text-2xl md:my-10 mb-6 text-lg">UDO Health</h1>
           <h2 class="md:text-2xl md:my-10 text-gray-500 text-lg">App Design</h2>
         </div>
-        <p class="lg:px-20 md:text-justify text-lg">In the summer of 2022 I just graduated from
-          <a href="https://www.lewagon.com/de/berlin" target="_blank" class="link-styles">LeWagon Bootcamp in Berlin</a>,
-          Germany, when one of my former classmates approached me with an interesting proposition: to join him on a team of three
-          Co-Founders with the goal of developing a mobile application in the Health Care Sector. With an outline of the project we
-          got accepted to receive a 6-month scholarship at the Future Health Care Accelerator of
-          <a href="https://www.lewagon.com/de/berlin" target="_blank" class="link-styles">BIA Berlin</a>.
-          <br><br> The challenge for us was to develop the best possible product as fast as possible. So we went from the initial
-          planning including customer personas, business model canvas to user journeys, gathering feedback and ultimately designing
-          the app in Figma, creating a working design Prototype. The idea was to create an app that lets the user keep track of
-          their own medical data, therefore never losing any of their health related data again and being able to communicate their
-          medical history easily with any treating physician. This would empower the individual and lead to better medical treatment in
-          the long run. </p>
+        <p class="lg:px-20 md:text-justify text-lg" v-html="$t('hero.description')">
 
+        </p>
       </div>
     </section>
 
     <!-- Project Showcase Section -->
-    <section class="md:p-20 p-10" id="project-showcase-section">
-      <h2 class="md:text-2xl text-xl mt-10 md:mb-2">Our Product Development Journey</h2>
-      <hr class="border border-black hidden md:block">
-      <div class="flex md:flex-row flex-col justify-stretch md:my-20 my-10 w-full">
-        <h3 class="text-base md:hidden">The first Mockups</h3>
-        <hr class="border-t border-black md:hidden mb-10">
-        <img src="images/FirstMockups3.png" alt="bia" class="md:w-5/12 md:mr-40 mb-10 object-cover">
-        <p class="md:w-7/12 inline-block text-lg">After wracking our brains and gathering enough data about what kind of product we wanted to build,
-          it was clear that we wanted to build an app that
-          was light and easy to use, emphasizing user experience over pure functionality and therefore creating a user experience that
-          would invoke pleasant feelings from the user and invite the user to continuous use. This was opposed to the existing
-          competition on the market that was overwhelmingly painted in subdued color schemes, predominantly using white, blue and green.
-          <br><br> Using Figma I started with a simple design held in very light colors with a soft and friendly feel.
+    <section class="lg:p-20 p-10" id="project-showcase-section">
+      <h2 class="lg:text-2xl text-xl mt-10 lg:mb-2">{{ $t('projectShowcase.selectedProjects') }}</h2>
+      <hr class="border border-black hidden lg:block">
+      <div class="flex lg:flex-row flex-col justify-stretch lg:my-20 my-10 w-full">
+        <h3 class="text-base lg:hidden">{{ $t('projectShowcase.project1.title') }}</h3>
+        <hr class="border-t border-black lg:hidden mb-10">
+        <img src="images/FirstMockups3.png" alt="bia" class="lg:w-5/12 lg:mr-40 mb-10 object-cover">
+        <p class="lg:w-7/12 inline-block text-lg" v-html="$t('projectShowcase.project1.description')">
+
         </p>
       </div>
-      <div class="flex md:flex-row flex-col justify-stretch my-40 w-full">
-        <h3 class="text-base md:hidden">Experimenting with Iteration</h3>
-        <hr class="border-t border-black md:hidden mb-10">
-        <img src="images/Iteration_udo.png" alt="bia" class="md:hidden rounded-2xl mb-10">
-        <p class="md:w-7/12 inline-block text-lg">From that first Design we started to gather successively more feedback from test users and iterate
-          the Design from there. Having a clear vision of what I wanted the app to look like, while incorporating the feedback from
-          users took a few iteration cycles and resulted in a first working Design for the UDO App.
-          <br><br> The main challenge at this point in the Development was to bring common Design principles such as contrasting
-          color scheme, easy to read typeface and intuitive button placement together with our image of an app, that makes Health
-          looks cute and playful. After trying many different colors, shades and layouts slowly the final version of the app began
-          to take shape.  </p>
+      <div class="flex lg:flex-row flex-col justify-stretch my-40 w-full">
+        <h3 class="text-base lg:hidden">{{ $t('projectShowcase.project2.title') }}</h3>
+        <hr class="border-t border-black lg:hidden mb-10">
+        <img src="images/Iteration_udo.png" alt="bia" class="lg:hidden rounded-2xl mb-10">
+        <p class="lg:w-7/12 inline-block text-lg" v-html="$t('projectShowcase.project2.description')">
 
-          <img src="images/Iteration_udo.png" alt="bia" class="w-5/12 ml-40 md:block hidden object-cover rounded-2xl">
+        </p>
+        <img src="images/Iteration_udo.png" alt="bia" class="w-5/12 ml-40 lg:block hidden object-cover rounded-2xl">
+      </div>
+      <div class="flex lg:flex-row flex-col justify-stretch my-20 w-full">
+        <h3 class="text-base lg:hidden">{{ $t('projectShowcase.project3.title') }}</h3>
+        <hr class="border-t border-black lg:hidden mb-10">
+        <img src="images/UDO_protoype.png" alt="bia" class="lg:w-5/12 lg:mr-40 lg:project-image-udo rounded-2xl mb-10 object-cover">
+        <p class="lg:w-7/12 inline-block text-lg" v-html="$t('projectShowcase.project3.description')">
 
+        </p>
       </div>
-      <div class="flex md:flex-row flex-col justify-stretch my-20 w-full">
-        <h3 class="text-base md:hidden">Polishing the Prototype</h3>
-        <hr class="border-t border-black md:hidden mb-10">
-        <img src="images/UDO_protoype.png" alt="bia" class="md:w-5/12 md:mr-40 md:project-image-udo rounded-2xl mb-10 object-cover">
-        <p class="md:w-7/12 inline-block text-lg">The final and finished protoype started to take shape towards the end of our stint at BIA.
-          Going from the initial first Design, many changes found itself incorporated into the final Design, but also some constants
-          that I managed to keep, like the light color scheme using pink and a very light pastel blue. Many of the Additional
-          features like the reward system were added in later stages of the development as users seemed to really connect
-          with the concept of gamification.
-          <br> <br> To give the user an understanding of how the finished app works the screens are fully clickable and
-          connected in a Figma protoype. The final Figma protoype can be found on Figma for experimentation and inspiration.
-          See emebedded prototype below. </p>
+    </section>
+
+    <!-- Slider Section -->
+    <section class="lg:p-20 p-10 relative ">
+      <h2 class="md:text-2xl text-xl mt-10 md:mb-2 relative z-10">{{ $t('imageGallery.title') }}</h2>
+      <div class="flex justify-center md:mt-20 -mt-6 md:mb-4 mb-2 w-full slider-container">
+        <div class="slider-wrapper rounded-2xl">
+          <div class="slider rounded-2xl">
+            <div id="slide-1" class="slide" style="background-image: url(images/Udo_Bubble.png);"></div>
+
+            <div id="slide-2" class="slide" style="background-image: url(images/Udo_Elements.png);"></div>
+
+            <div id="slide-3" class="slide" style="background-image: url(images/Udo_Calendar.png);"></div>
+          </div>
+
+          <div class="dots">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+          </div>
+        </div>
       </div>
+      <small class="caption" v-html="$t('imageGallery.caption')">
+
+      </small>
     </section>
 
     <!-- Prototype Section -->
     <section class="md:p-20 p-10">
-      <h2 class="md:text-2xl text-xl mt-10 md:mb-2">The Figma Prototype</h2>
+      <h2 class="md:text-2xl text-xl mt-10 md:mb-2">{{ $t('prototype.title') }}</h2>
       <hr class="border-t border-black md:hidden mb-10">
       <iframe
         src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FfakDPRVmtT6a3BuGpmM3Lf%2FUntitled%3Ftype%3Ddesign%26node-id%3D1%253A602%26mode%3Ddesign%26t%3DX7tUI53bXS5wM70J-1"
         allowfullscreen class="figma my-10 rounded-2xl border-black border-2">
       </iframe>
-      <p>Link to the <a href="https://www.figma.com/community/file/1242495639001618726/Health-Tracking-App" class="link-styles" target="_blank">Figma Protoype</a></p>
+      <p v-html="$t('prototype.link')">
+
+      </p>
     </section>
 
     <!-- Social Media and Contact Section -->
@@ -140,10 +147,10 @@
           </a>
         </div>
       </div>
-      <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">Looking for a Web Developer?</p>
+      <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">{{ $t('socialContact.lookingForDev') }}</p>
       <div class='wrap'>
         <div class='fill-wrap'>
-          <a href='contact.html' class='btn btn-desert btn-b-t lg:text-4xl p-4 md:p-6 rounded-full'>GET IN TOUCH</a>
+          <a href='contact.html' class='btn btn-desert btn-b-t lg:text-4xl p-4 md:p-6 rounded-full'>{{ $t('socialContact.getInTouch') }}</a>
         </div>
       </div>
 
@@ -159,7 +166,88 @@
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-i18n@9.1.7/dist/vue-i18n.global.js"></script>
+    <script>
+      const enMessages = {
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "CONTACT"
+        },
+        "hero": {
+          "title": "Udo Health",
+          "category": "App Design",
+          "description": "In the summer of 2022 I just graduated from <a href='https://www.lewagon.com/de/berlin' target='_blank' class='link-styles'>LeWagon Bootcamp in Berlin</a>, Germany, when one of my former classmates approached me with an interesting proposition: to join him on a team of three Co-Founders with the goal of developing a mobile application in the Health Care Sector. With an outline of the project we got accepted to receive a 6-month scholarship at the Future Health Care Accelerator of <a href='https://www.lewagon.com/de/berlin' target='_blank' class='link-styles'>BIA Berlin</a>. <br><br> The challenge for us was to develop the best possible product as fast as possible. So we went from the initial planning including customer personas, business model canvas to user journeys, gathering feedback and ultimately designing the app in Figma, creating a working design Prototype. The idea was to create an app that lets the user keep track of their own medical data, therefore never losing any of their health related data again and being able to communicate their medical history easily with any treating physician. This would empower the individual and lead to better medical treatment in the long run. "
+        },
+        "projectShowcase": {
+          "selectedProjects": "Our Product Development Journey",
+          "project1": {
+            "title": "The first Mockups",
+            "description": "After wracking our brains and gathering enough data about what kind of product we wanted to build, it was clear that we wanted to build an app that was light and easy to use, emphasizing user experience over pure functionality and therefore creating a user experience that would invoke pleasant feelings from the user and invite the user to continuous use. This was opposed to the existing competition on the market that was overwhelmingly painted in subdued color schemes, predominantly using white, blue and green. <br><br> Using Figma I started with a simple design held in very light colors with a soft and friendly feel."
+          },
+          "project2": {
+            "title": "Experimenting with Iteration",
+            "description": "From that first Design we started to gather successively more feedback from test users and iterate the Design from there. Having a clear vision of what I wanted the app to look like, while incorporating the feedback from users took a few iteration cycles and resulted in a first working Design for the UDO App. <br><br> The main challenge at this point in the Development was to bring common Design principles such as contrasting color scheme, easy to read typeface and intuitive button placement together with our image of an app, that makes Health look cute and playful. After trying many different colors, shades and layouts slowly the final version of the app began to take shape."
+          },
+          "project3": {
+            "title": "Polishing the Prototype",
+            "description": "The final and finished protoype started to take shape towards the end of our stint at BIA. Going from the initial first Design, many changes found itself incorporated into the final Design, but also some constants that I managed to keep, like the light color scheme using pink and a very light pastel blue. Many of the Additional features like the reward system were added in later stages of the development as users seemed to really connect with the concept of gamification. <br> <br> To give the user an understanding of how the finished app works the screens are fully clickable and connected in a Figma protoype. The final Figma protoype can be found on Figma for experimentation and inspiration. See embedded prototype below."
+          }
+        },
+        "imageGallery": {
+            "title": "Image Gallery",
+            "caption": "Use horizontal scroll<span class='hidden lg:inline-block'>, arrow keys or dots</span> to navigate"
+        },
+        "prototype": {
+          "title": "The Figma Protoype",
+          "link": "Link to the <a href='https://www.figma.com/community/file/1242495639001618726/Health-Tracking-App' class='link-styles' target='_blank'>Figma Protoype</a>"
+        },
+        "socialContact": {
+          "lookingForDev": "Looking for a Web Developer?",
+          "getInTouch": "GET IN TOUCH",
+          "hireMe": "HIRE ME"
+        }
+      };
+      const deMessages = {
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "KONTAKT"
+        },
+        "hero": {
+          "title": "Udo Health",
+          "category": "App Design",
+          "description": "Im Sommer 2022 hatte ich gerade das <a href='https://www.lewagon.com/de/berlin' target='_blank' class='link-styles'>LeWagon Bootcamp in Berlin</a> absolviert, als einer meiner ehemaligen Klassenkameraden mit einem interessanten Vorschlag an mich herantrat: Ich sollte in einem Team von drei Co-Foundern mitarbeiten, um eine mobile Anwendung für den Gesundheitssektor zu entwickeln. Mit einer Projektskizze erhielten wir die Zusage für ein 6-monatiges Stipendium beim <a href='https://www.lewagon.com/de/berlin' target='_blank' class='link-styles'>Future Health Care Accelerator der BIA Berlin</a>. <br><br> Die Herausforderung für uns bestand darin, das bestmögliche Produkt so schnell wie möglich zu entwickeln. So we went from the initial planning including customer personas, business model canvas to user journeys, gathering feedback and ultimately designing the app in Figma, creating a working design Prototype. The idea was to create an app that lets the user keep track of their own medical data, therefore never losing any of their health related data again and being able to communicate their medical history easily with any treating physician. This would empower the individual and lead to better medical treatment in the long run."
+        },
+        "projectShowcase": {
+          "selectedProjects": "Unsere Produktentwicklung",
+          "project1": {
+            "title": "Die ersten Entwürfe",
+            "description": "Nachdem wir uns den Kopf zerbrochen und genügend Daten darüber gesammelt hatten, welche Art von Produkt wir entwickeln wollten, war klar, dass wir eine App entwickeln wollten, die leicht und einfach zu bedienen ist, die das Benutzererlebnis über die reine Funktionalität stellt und somit ein Benutzererlebnis schafft, das beim Benutzer angenehme Gefühle hervorruft und ihn zur kontinuierlichen Nutzung einlädt. <br><br>Dies stand im Gegensatz zu den bestehenden Wettbewerbern auf dem Markt, die überwiegend in gedämpften Farbschemata gehalten waren und überwiegend Weiß, Blau und Grün verwendeten."
+          },
+          "project2": {
+            "title": "Entwicklung durch Iteration",
+            "description": "Von diesem ersten Design aus sammelten wir sukzessive mehr Feedback von Testnutzern und iterierten das Design von dort aus. Es dauerte einige Iterationszyklen, bis wir eine klare Vorstellung davon hatten, wie die App aussehen sollte.<br><br> Die größte Herausforderung an diesem Punkt der Entwicklung bestand darin, gängige Designprinzipien wie kontrastreiche Farben, eine leicht lesbare Schrift und eine intuitive Platzierung der Schaltflächen mit unserem Bild einer App zu verbinden, die Health niedlich und verspielt aussehen lässt. Nachdem wir viele verschiedene Farben, Schattierungen und Layouts ausprobiert hatten, nahm die endgültige Version der App langsam Gestalt an."
+          },
+          "project3": {
+            "title": "Finalisierung des Prototyps",
+            "description": "Der endgültige und fertige Protoyp nahm gegen Ende unserer Zeit bei BIA Gestalt an. Ausgehend vom ersten Entwurf wurden viele Änderungen in das endgültige Design eingearbeitet, aber es gab auch einige Konstanten, die ich beibehalten habe, wie das helle Farbschema mit Rosa und einem sehr hellen Pastellblau. Viele der zusätzlichen Funktionen, wie das Belohnungssystem, wurden in späteren Phasen der Entwicklung hinzugefügt, da die Benutzer das Konzept der Gamification wirklich zu mögen schienen.<br> <br> Um dem Benutzer ein Verständnis dafür zu vermitteln, wie die fertige App funktioniert, sind die Bildschirme in einem Figma-Protoype vollständig anklickbar und miteinander verbunden. Der endgültige Figma-Prototyp kann auf Figma zum Experimentieren und zur Inspiration verwendet werden."
+          }
+        },
+        "imageGallery": {
+            "title": "Bilder Galerie",
+            "caption": "Use horizontal scroll<span class='hidden lg:inline-block'>, arrow keys or dots</span> to navigate"
+        },
+        "prototype": {
+          "title": "Der Figma Protoyp",
+          "link": "Link zum <a href='https://www.figma.com/community/file/1242495639001618726/Health-Tracking-App' class='link-styles' target='_blank'>Figma Protoyp</a>"
+        },
+        "socialContact": {
+          "lookingForDev": "Webentwickler gesucht?",
+          "getInTouch": "KONTAKTIEREN",
+          "hireMe": "MICH EINSTELLEN"
+        }
+      };
+    </script>
+
     <script src="app.js"></script>
 
   </body>

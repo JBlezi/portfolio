@@ -1,6 +1,18 @@
+
+// Create the I18n instance
+const i18n = VueI18n.createI18n({
+  locale: 'en', // Set the default locale (you can change this based on user preferences)
+  messages: {
+    en: enMessages,
+    de: deMessages,
+    // Add more locales here if needed
+  },
+});
+
 const app = Vue.createApp({
   data() {
     return {
+      currentLanguage: 'en', // Set the default language here
       showVideo: false,
       videoUrl: 'https://www.youtube.com/embed/NYzqGc2xBaw?autoplay=1&start=3921',
       currentSection: '',
@@ -10,10 +22,26 @@ const app = Vue.createApp({
     playVideo() {
       this.showVideo = true;
     },
+    toggleLanguage(language) {
+      this.currentLanguage = language;
+      this.$i18n.locale = language; // Update the i18n locale when language is toggled
+
+      // Save the chosen language to local storage
+      localStorage.setItem('language', language);
+    },
+    initializeLanguage() {
+      // Check if the language preference is stored in local storage
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        this.currentLanguage = storedLanguage;
+        this.$i18n.locale = storedLanguage;
+      }
+    },
   },
   mounted() {
-      // Hide the floating button in the hero section initially
-
+    this.initializeLanguage();
+    
+    // Hide the floating button in the hero section initially
     gsap.set("#floating-button", { autoAlpha: 0 });
 
 
@@ -35,7 +63,7 @@ const app = Vue.createApp({
       },
     });
 
-    if (window.matchMedia("(min-width: 900px)").matches){
+/*     if (window.matchMedia("(min-width: 900px)").matches){
       gsap.registerPlugin(ScrollTrigger);
 
       let sections = gsap.utils.toArray(".horizontal-scroll");
@@ -95,18 +123,6 @@ const app = Vue.createApp({
         id: "4"
       });
 
-/*       const scrollContainer = document.querySelector(".scroll-container");
-
-      // GSAP ScrollTrigger to pin the "pin-section" during the animation
-      ScrollTrigger.create({
-        trigger: ".pin-trigger",
-        start: "bottom bottom",
-        end: () => `+=${scrollContainer.scrollWidth - window.innerWidth}px`, // Adjust this value to control when the pin should end
-        pin: ".pin-trigger",
-        pinSpacing: false, // Set this to false to disable the spacing for pinned elements
-        scrub: true, // Enable smooth scrubbing effect
-      }); */
-
 
 
       // only show the relevant section's markers at any given time
@@ -121,8 +137,9 @@ const app = Vue.createApp({
           onToggle: self => gsap.to(".marker-" + (i+1), {duration: 0.25, autoAlpha: self.isActive ? 1 : 0})
         });
       });
-    }
+    } */
   }
 });
 
+app.use(i18n);
 app.mount('#app');
