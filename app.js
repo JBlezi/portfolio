@@ -25,11 +25,23 @@ const app = Vue.createApp({
     toggleLanguage(language) {
       this.currentLanguage = language;
       this.$i18n.locale = language; // Update the i18n locale when language is toggled
-    }
+
+      // Save the chosen language to local storage
+      localStorage.setItem('language', language);
+    },
+    initializeLanguage() {
+      // Check if the language preference is stored in local storage
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        this.currentLanguage = storedLanguage;
+        this.$i18n.locale = storedLanguage;
+      }
+    },
   },
   mounted() {
-      // Hide the floating button in the hero section initially
-
+    this.initializeLanguage();
+    
+    // Hide the floating button in the hero section initially
     gsap.set("#floating-button", { autoAlpha: 0 });
 
 

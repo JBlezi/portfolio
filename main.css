@@ -189,7 +189,7 @@ button {
   }
 
   .hero-image {
-    height: 74vh;
+    max-height: 74vh;
   }
 
   .slide-up {
