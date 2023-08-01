@@ -109,7 +109,7 @@ button {
 }
 
 .figma {
-  height: 25vh;
+  height: 60vh;
   width: 100%;
 }
 
@@ -135,8 +135,14 @@ button {
     height: 50vh !important;
   }
   .figma {
-    height: 50vh;
+    height: 70vh;
     width: 100%;
+  }
+  .landscape {
+    visibility: hidden;
+  }
+  .slider {
+    margin-bottom: 0.5rem;
   }
 }
 @media only screen and (min-width: 800px) {
@@ -152,7 +158,9 @@ button {
     margin-bottom: -4rem;
   }
 
-
+  .landscape {
+    visibility: visible;
+  }
 
   .project-image img {
     height: 50vh !important;
@@ -221,11 +229,11 @@ button {
     width: var(--slide-width);
     height: var(--slide-height);
     background-size: cover !important;
-}
-.slider {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  }
+  .slider {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .project-image-udo {
@@ -400,12 +408,6 @@ button {
   width: 100%;
 }
 
-
-
-
-.slider-wrapper {
-	position: relative;
-}
 
 .slider {
 	--slide-width: clamp(320px, 90vw, 1500px);

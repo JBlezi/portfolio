@@ -91,10 +91,10 @@
     </section>
 
     <!-- Slider Section -->
-    <section class="lg:p-20 p-10 relative ">
-      <h2 class="md:text-2xl text-xl mt-10 md:mb-2 relative z-10">{{ $t('imageGallery.title') }}</h2>
-      <div class="flex justify-center md:mt-20 -mt-6 md:mb-4 mb-2 w-full slider-container">
-        <div class="slider-wrapper rounded-2xl">
+    <section class="relative lg:p-20 p-10">
+      <h2 class="md:text-2xl text-xl mt-10 md:mb-2 z-10 relative mb-8 landscape">{{ $t('imageGallery.title') }}</h2>
+      <div class="flex justify-center md:mt-20 -mt-6 md:mb-4 mb-2 w-full">
+        <div class="rounded-2xl">
           <div class="slider rounded-2xl">
             <div id="slide-1" class="slide" style="background-image: url(images/Udo_Bubble.png);"></div>
 
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-      <small class="caption" v-html="$t('imageGallery.caption')">
+      <small class="caption landscape" v-html="$t('imageGallery.caption')">
 
       </small>
     </section>
