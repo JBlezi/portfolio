@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
-    <title>Your Portfolio</title>
+    <title>My Portfolio</title>
     <style>
       /* Additional custom styles can be added here */
     </style>
@@ -29,7 +29,7 @@
         </a>
         <div class='wrap flex flex-row'>
           <div class='fill-wrap'>
-            <div class="flex flex-row mx-4">
+            <div class="flex flex-row mx-4 lg:text-xl">
               <button @click="toggleLanguage('en')" :class="{ active: currentLanguage === 'en' }">EN<span style="color:black">/</span></button>
               <button @click="toggleLanguage('de')" :class="{ active: currentLanguage === 'de' }">DE</button>
               <!-- Your other content here -->

@@ -16,7 +16,22 @@ const app = Vue.createApp({
       showVideo: false,
       videoUrl: 'https://www.youtube.com/embed/NYzqGc2xBaw?autoplay=1&start=3921',
       currentSection: '',
+      technologies: [],
+      VueLogo: 'images/vuejs.svg',
+      ContentfulLogo: 'images/Contentful_Logo.svg',
+      NetlifyLogo: 'images/Netlify_logo.png',
+      FigmaLogo: 'images/figma-logo.svg',
+      activeTech: 'figma'  // Default active technology
     };
+  },
+  created() {
+      this.updateTechnologies(); // Set the initial value of the technologies array
+  },
+  watch: {
+      currentLanguage() {
+          this.$i18n.locale = this.currentLanguage; // Change the i18n locale
+          this.updateTechnologies(); // Update the technologies translations
+      }
   },
   methods: {
     playVideo() {
@@ -29,6 +44,34 @@ const app = Vue.createApp({
       // Save the chosen language to local storage
       localStorage.setItem('language', language);
     },
+    updateTechnologies() {
+        this.technologies = [
+            {
+                id: 'figma',
+                name: this.$t('technologies.figma.name'),
+                picture: this.FigmaLogo,
+                description: this.$t('technologies.figma.description')
+            },
+            {
+                id: 'vue',
+                name: this.$t('technologies.vue.name'),
+                picture: this.VueLogo,
+                description: this.$t('technologies.vue.description')
+            },
+            {
+                id: 'contentful',
+                name: this.$t('technologies.contentful.name'),
+                picture: this.ContentfulLogo,
+                description: this.$t('technologies.contentful.description')
+            },
+            {
+                id: 'netlify',
+                name: this.$t('technologies.netlify.name'),
+                picture: this.NetlifyLogo,
+                description: this.$t('technologies.netlify.description')
+            }
+        ];
+    },
     initializeLanguage() {
       // Check if the language preference is stored in local storage
       const storedLanguage = localStorage.getItem('language');
@@ -40,7 +83,7 @@ const app = Vue.createApp({
   },
   mounted() {
     this.initializeLanguage();
-    
+
     // Hide the floating button in the hero section initially
     gsap.set("#floating-button", { autoAlpha: 0 });
 
@@ -140,6 +183,7 @@ const app = Vue.createApp({
     } */
   }
 });
+
 
 app.use(i18n);
 app.mount('#app');

@@ -478,6 +478,32 @@ button {
 	letter-spacing: 0.5px;
 }
 
+.technologies.active {
+  border-bottom: none !important; /* The !important is used to override any other border styles */
+  background-color: white;
+}
+
+.no-sides-border {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.no-right-border  {
+  border-right: none !important;
+}
+
+.festival-button:hover {
+  border-width: 5px;
+  border-radius: 4rem;
+  padding: 4rem;
+  border-color: hotpink;
+}
+
+.festival-button {
+  transition: ease 1500ms;
+}
+
+
 
 /* ------------------------------ */
 /* ------- BUTTON STYLING ------- */
