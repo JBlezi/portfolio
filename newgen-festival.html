@@ -57,7 +57,7 @@
       </section>
 
       <!-- Project Showcase Section -->
-      <section class="md:px-20 px-10 my-32" id="project-showcase-section">
+      <section class="md:px-20 px-10 mt-32" id="project-showcase-section">
         <h2 class="md:text-2xl text-xl my-10 lg:text-4xl">{{ $t('presentation.title') }}</h2>
         <div class="my-10">
           <div class="flex flex-col md:flex-row w-full justify-between">
@@ -76,8 +76,9 @@
       </section>
 
       <!-- Prototype Section -->
-      <section class="md:p-20 p-10 flex">
-        <h2 class="md:text-2xl text-xl lg:text-4xl justify-between mx-auto festival-button text-center border-2 border-pink-400 rounded-2xl p-6 md:border-0" v-html="$t('link.title')"></h2>
+      <section class="md:p-20 p-10 flex flex-col">
+        <h2 class="md:text-2xl text-xl my-10 lg:text-4xl mx-auto">{{ $t('link.title') }}</h2>
+        <button class="md:text-2xl text-xl lg:text-4xl justify-between mx-auto festival-button text-center border-2 border-black rounded-2xl p-6 md:border-0 md:bg-[#F1F5FF]" v-html="$t('link.button')"></button>
 
       </section>
 
@@ -140,42 +141,24 @@
             },
             "contentful": {
                 "name": "Contentful",
-                "description": "Contentful is a powerful headless Content Management System that is easy to use and easy to maintain. Especially the very straightforward implementation was a big factor in choosing Contentful over other alternatives. Maintenance of all relevant information on the website can now easily be handled by employees of the festival and requires no interaction with the code base."
+                "description": "Contentful is a powerful headless Content Management System that is easy to use and easy to maintain. Especially the very straightforward implementation was a big factor in choosing Contentful over other alternatives. Maintenance of all relevant information on the website can now easily be handled by the festival staff and requires no interaction with the code base."
             },
             "netlify": {
                 "name": "Netlify",
-                "description": "Netlify is one of the biggest hosting providers worldwide and is especially useful for mor lightweight webpages that don't need to sustain their own backend, such as Berlin NewGen. Netlify offers ease of use in combination with a generous free hosting plan and push to deploy via GitHub."
+                "description": "Netlify is one of the biggest hosting providers worldwide and is especially useful for more lightweight webpages that don't need to sustain their own backend, such as Berlin NewGen. Netlify offers ease of use in combination with a generous free hosting plan and push to deploy via GitHub."
             },
             "figma": {
                 "name": "figma",
                 "description": "Figma is one of the most ubiquitous design tools in modern web development by now and the design for the Berlin NewGen Website was also done in Figma. Especially the transfer of design to code directly inside Figma proves very useful when working with gradients and colors."
             }
         },
-        "projectShowcase": {
-          "selectedProjects": "Our Product Development Journey",
-          "project1": {
-            "title": "The Homepage",
-            "description": "Upon registering as a user by signing up with your email and chosen password, the first thing you see is the ticket homepage showing you all the existing tickets from other users. Color coding indicates the status of every ticket - green indictating open tickets, orange for tickets in progress and white for tickets who have already been answered and are therefore closed. The <code>search bar</code> at the top makes it possible to search all existing tickets to check if your specific question might already have been answered."
-          },
-          "project2": {
-            "title": "Creating your own Request",
-            "description": "If you had a go checking the existing requests but didn't find what you are looking for, then it's time to <code>raise your own ticket</code> and creating your own request. Upon doing that you have to give your request a title, a proper description and choose the languages that relate to your current problem. Once you've inputted all the necessary information it ist time to hit the <code>Create Ticket</code> button and wait for an expert to accept your request! "
-          },
-          "project3": {
-            "title": "Video Call & Screen Sharing",
-            "description": "Once someone accepted your ticket you will receive a notification in your messages tab and you can answer that person in the chat. Once you have established, that your expert is ready and has time to explain to you how to solve the problem, you can both <code>hop on a video call</code> and speak to each other live. Additionally you can also <code>share your own screen</code> with the other person to show your code and make sure they understand the details of your specific problem. "
-          },
-          "project4": {
-            "title": "Profiles & Reviews",
-            "description": "Once you've fixed the coding problem and finished the call, it is time to leave your evaluation for the call through a review form. Another feature of the platform is the possibility to look at other <code>users profiles</code> and see their past <code>reviews</code> to determine wether you would like to accept help from them or not. Profiles include a name, short description, a changeable profile picture and reviews from past tickets in a five-star rating format."
-          }
-        },
         "presentation": {
-          "title": "Technologies used in this project",
+          "title": "Tech Stack for this project",
           "description": "At the end of the program you get the chance to present your project in front of the whole batch. Here I want to take the opportunity and give many thanks to my great team members Luciano, Gesa & Chloe. We poured our heart and our sweat into this project from start to finish and were able to deliver something truly great!"
         },
         "link": {
-          "title": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Visit the Berlin NewGen Chinese Film Festival Website</a>"
+          "title": "The final Website",
+          "button": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Visit the Berlin NewGen Chinese Film Festival Website</a>"
         },
         "socialContact": {
           "lookingForDev": "Looking for a Web Developer?",
@@ -211,27 +194,12 @@
                 "description": "fFigma ist mittlerweile eines der allgegenwärtigsten Designwerkzeuge in der modernen Webentwicklung und auch das Design für die Berlin NewGen Website wurde in Figma erstellt. Insbesondere die Übertragung des Designs in den Code direkt in Figma erweist sich bei der Arbeit mit Farbverläufen und Farben als sehr nützlich."
             }
         },
-        "projectShowcase": {
-          "selectedProjects": "Unsere Produktentwicklungsreise",
-          "project1": {
-            "title": "Die Homepage",
-            "description": "Nach der Registrierung als Benutzer, indem Sie sich mit Ihrer E-Mail und Ihrem gewählten Passwort angemeldet haben, sehen Sie zuerst die Ticket-Homepage, auf der Ihnen alle vorhandenen Tickets anderer Benutzer angezeigt werden. Die Farbcodierung gibt den Status jedes Tickets an - grün für offene Tickets, orange für Tickets in Bearbeitung und weiß für Tickets, die bereits beantwortet wurden und daher geschlossen sind. Die Suchleiste oben ermöglicht es, alle vorhandenen Tickets zu durchsuchen, um zu prüfen, ob Ihre spezifische Frage möglicherweise bereits beantwortet wurde."
-          },
-          "project2": {
-            "title": "Ihre eigene Anfrage",
-            "description": "Wenn Sie bereits alle vorhandenen Anfragen überprüft haben, aber nicht das gefunden haben, wonach Sie suchen, ist es an der Zeit, Ihre eigene Anfrage zu erstellen. Dabei müssen Sie Ihrer Anfrage einen Titel, eine geeignete Beschreibung und die Programmier-Sprachen zuweisen, die sich auf Ihr aktuelles Problem beziehen. Sobald Sie alle erforderlichen Informationen eingegeben haben, ist es an der Zeit, auf die Schaltfläche 'Ticket erstellen' zu klicken und auf die Annahme Ihrer Anfrage durch einen Experten zu warten!"
-          },
-          "project3": {
-            "title": "Videoanruf",
-            "description": "Sobald jemand Ihre Anfrage akzeptiert hat, erhalten Sie eine Benachrichtigung in Ihrem Nachrichten-Tab, und Sie können dieser Person im Chat antworten. Sobald Sie festgestellt haben, dass Ihr Experte bereit ist und Zeit hat, Ihnen zu erklären, wie das Problem gelöst wird, können Sie beide einen Videoanruf starten und miteinander sprechen. Darüber hinaus können Sie Ihren Bildschirm für die andere Person freigeben, um Ihren Code zu zeigen und sicherzustellen, dass der Experte die Details Ihres spezifischen Problems versteht."
-          },
-          "project4": {
-            "title": "Profile & Bewertungen",
-            "description": "Sobald Sie das Programmierproblem behoben und den Anruf beendet haben, ist es an der Zeit, Ihre Bewertung für den Anruf über ein Bewertungsformular abzugeben. Eine weitere Funktion der Plattform besteht darin, die Profile anderer Benutzer anzusehen und ihre vergangenen Bewertungen zu checken, um zu entscheiden, ob Sie Hilfe von ihnen annehmen möchten oder nicht. Profile enthalten einen Namen, eine kurze Beschreibung, ein änderbares Profilbild und Bewertungen von vergangenen Anfragen in einem Fünf-Sterne-Bewertungsformat."
-          }
+        "link": {
+          "title": "Die finale Website",
+          "button": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Zur Website von Berlin NewGen Chinese Film Festival</a>"
         },
         "presentation": {
-          "title": "Technologien in diesem Projekt",
+          "title": "Tech Stack für dieses Projekt",
           "description": "Am Ende des Programms hat man die Möglichkeit, sein Projekt vor der gesamten Gruppe zu präsentieren. An dieser Stelle möchte ich die Gelegenheit nutzen und mich bei meinen großartigen Teammitgliedern Luciano, Gesa und Chloe herzlich bedanken. Wir haben von Anfang bis Ende unser Herz in dieses Projekt gesteckt und konnten etwas wirklich Großartiges abliefern!"
         },
         "socialContact": {
