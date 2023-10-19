@@ -47,10 +47,10 @@
         </div>
         <div class="p-10 md:p-0">
           <div class="flex flex-row justify-between lg:px-20 mb-10">
-            <h1 class="md:text-2xl text-lg md:my-10 mb-6">Livecode Community</h1>
-            <h2 class="md:text-2xl text-lg md:my-10 text-gray-500 text-right">{{ $t('hero.category') }}</h2>
+            <h1 class="md:text-2xl text-lg md:my-10 mb-6 lg:text-4xl">Livecode Community</h1>
+            <h2 class="md:text-2xl text-lg md:my-10 text-gray-500 text-right lg:text-4xl">{{ $t('hero.category') }}</h2>
           </div>
-          <p class="lg:px-20 md:text-justify md:text-lg" v-html="$t('hero.description')">
+          <p class="lg:px-20 md:text-justify md:text-lg lg:text-2xl" v-html="$t('hero.description')">
 
             </p>
         </div>
@@ -62,42 +62,42 @@
         <div class="md:my-20 my-10 md:pt-20 scrollbar-hide scroll-container md:flex">
 
           <div class="md:mr-20 mb-20 horizontal-scroll inline-block first">
-            <h2 class="md:text-2xl md:mb-10">{{ $t('projectShowcase.project1.title') }}</h2>
+            <h2 class="md:text-2xl md:mb-10 lg:text-4xl">{{ $t('projectShowcase.project1.title') }}</h2>
             <hr class="border-t border-black md:hidden mb-10">
             <div class="project-image-udo overflow-hidden flex justify-center md:mb-20 mb-8">
               <img src="images/ticket_home.png" alt="bia" class="md:w-full md:h-full md:object-cover">
             </div>
-            <p class="whitespace-normal md:text-lg" v-html="$t('projectShowcase.project1.description')">
+            <p class="whitespace-normal md:text-lg lg:text-2xl" v-html="$t('projectShowcase.project1.description')">
 
             </p>
           </div>
           <div class="md:mr-20 mb-20 horizontal-scroll inline-block second">
-            <h2 class="md:text-2xl md:mb-10">{{ $t('projectShowcase.project2.title') }}</h2>
+            <h2 class="md:text-2xl md:mb-10 lg:text-4xl">{{ $t('projectShowcase.project2.title') }}</h2>
             <hr class="border-t border-black md:hidden mb-10">
             <div class="project-image-udo overflow-hidden flex justify-center md:mb-20 mb-8">
               <img src="images/raise_ticket.png" alt="bia" class="w-full h-full object-cover">
             </div>
-            <p class="whitespace-normal md:text-lg" v-html="$t('projectShowcase.project2.description')">
+            <p class="whitespace-normal md:text-lg lg:text-2xl" v-html="$t('projectShowcase.project2.description')">
 
             </p>
           </div>
           <div class="md:mr-20 mb-20 horizontal-scroll inline-block third">
-            <h2 class="md:text-2xl md:mb-10">{{ $t('projectShowcase.project3.title') }}</h2>
+            <h2 class="md:text-2xl md:mb-10 lg:text-4xl">{{ $t('projectShowcase.project3.title') }}</h2>
             <hr class="border-t border-black md:hidden mb-10">
             <div class="project-image-udo overflow-hidden md:mb-20 mb-8">
               <img src="images/video-call_demo.png" alt="bia" class="object-cover w-full">
             </div>
-            <p class="whitespace-normal md:text-lg" v-html="$t('projectShowcase.project3.description')">
+            <p class="whitespace-normal md:text-lg lg:text-2xl" v-html="$t('projectShowcase.project3.description')">
 
             </p>
           </div>
           <div class="horizontal-scroll inline-block last">
-            <h2 class="md:text-2xl md:mb-10">{{ $t('projectShowcase.project4.title') }}</h2>
+            <h2 class="md:text-2xl md:mb-10 lg:text-4xl">{{ $t('projectShowcase.project4.title') }}</h2>
             <hr class="border-t border-black md:hidden mb-10">
             <div class="project-image-udo overflow-hidden md:mb-20 mb-8">
               <img src="images/profile_centered.png" alt="bia" class="w-full object-cover">
             </div>
-            <p class="whitespace-normal md:text-lg" v-html="$t('projectShowcase.project3.description')">
+            <p class="whitespace-normal md:text-lg lg:text-2xl" v-html="$t('projectShowcase.project3.description')">
 
             </p>
           </div>
@@ -107,7 +107,7 @@
 
       <!-- Prototype Section -->
       <section class="md:p-20 p-10">
-        <h2 class="md:text-2xl text-xl my-10">{{ $t('presentation.title') }}</h2>
+        <h2 class="md:text-2xl text-xl my-10 lg:text-4xl">{{ $t('presentation.title') }}</h2>
         <div class="video-container relative w-full mb-10">
           <img v-if="!showVideo" src="images/Presentation_thumbnail.png" alt="bia" class="thumbnail object-cover object-center w-full h-full absolute top-0 left-0 h-48" @click="playVideo">
           <iframe v-if="showVideo" :src="videoUrl" title="YouTube video player"
@@ -115,7 +115,7 @@
           allowfullscreen class="figma my-10 w-full h-auto">
           </iframe>
         </div>
-        <p class="w-full inline-block md:text-lg">
+        <p class="w-full inline-block md:text-lg lg:text-2xl">
           {{ $t('presentation.description') }}
         </p>
       </section>
