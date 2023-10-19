@@ -60,8 +60,8 @@
       <section class="md:px-20 px-10 my-32" id="project-showcase-section">
         <h2 class="md:text-2xl text-xl my-10 lg:text-4xl">{{ $t('presentation.title') }}</h2>
         <div class="my-10">
-          <div class="flex flex-row w-full justify-between">
-            <div class="border-black border-2 rounded-t-2xl w-1/4 flex technologies" v-for="(tech, index) in technologies"
+          <div class="flex flex-col md:flex-row w-full justify-between">
+            <div class="border-black border-t-2 border-l-2 border-r-2 md:border-b-2 rounded-t-2xl h-24 md:h-auto md:w-1/4 flex technologies" v-for="(tech, index) in technologies"
                 :key="tech.id"
                 :class="{'no-sides-border': index === 1, 'no-right-border': index === 2, 'active': tech.id === activeTech }"
                 @click="activeTech = tech.id">
@@ -77,7 +77,7 @@
 
       <!-- Prototype Section -->
       <section class="md:p-20 p-10 flex">
-        <h2 class="md:text-2xl text-xl lg:text-4xl justify-between mx-auto festival-button" v-html="$t('link.title')"></h2>
+        <h2 class="md:text-2xl text-xl lg:text-4xl justify-between mx-auto festival-button text-center border-2 border-pink-400 rounded-2xl p-6 md:border-0" v-html="$t('link.title')"></h2>
 
       </section>
 

@@ -208,6 +208,19 @@ button {
     height: 50vh;
   }
 
+  .no-sides-border {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .no-right-border  {
+    border-right: none !important;
+  }
+
+  .festival-button {
+    transition: ease 1500ms;
+  }
+
   /* Hide scrollbar for IE, Edge and Firefox */
 /*   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -483,20 +496,11 @@ button {
   background-color: white;
 }
 
-.no-sides-border {
-  border-left: none !important;
-  border-right: none !important;
-}
-
-.no-right-border  {
-  border-right: none !important;
-}
-
 .festival-button:hover {
   border-width: 5px;
   border-radius: 4rem;
   padding: 4rem;
-  border-color: hotpink;
+  border-color: rgb(255, 105, 180);
 }
 
 .festival-button {
