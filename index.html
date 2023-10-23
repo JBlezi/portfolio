@@ -53,6 +53,20 @@
       </div>
     </section>
 
+    <section class="p-6 md:pt-20 md:pb-10 md:mx-10">
+      <div class="flex">
+        <div class="md:text-lg lg:text-2xl w-2/3 tracking-wide pr-20">
+          <h2 class="text-2xl md:font-bold mb-10 lg:text-4xl">{{ $t('about.title') }}</h2>
+          <div v-html="$t('about.description')">
+
+          </div>
+        </div>
+        <div class="portrait-wrapper w-1/3">
+          <img src="images/Julius_Blezinger_Portrait.png" alt="Julius Blezinger Portrait">
+        </div>
+      </div>
+    </section>
+
     <!-- Project Showcase Section -->
     <section class="p-6 md:pt-20 md:pb-10" style="background-color: #8E929C" id="project-showcase-section">
       <div class="md:mx-10"  style="color: #F1F5FF">
@@ -186,6 +200,10 @@
           "title": "Digital Designer &<br> Web Developer",
           "description": "My goal is to make your business shine <span class='hidden md:inline'>and bring out its true potential,</span> by giving you a website that is as great as your business."
         },
+        "about": {
+          "title": "ABOUT ME",
+          "description": "<p class='leading-relaxed'>I am Julius Blezinger, self taught Web Designer and Developer. I have been living in Berlin for six years now gaining three years experience in Frontend Web Development and over one year in Full Stack Web Development.</p><br><p class='leading-relaxed'>My preferred stack is working with Vue.js, Ruby and Tailwind CSS, as well as Contentful CMS for Headless CMS solutions. </p><br><p class='leading-relaxed'>My focus is on working tightly with you as my client and creating bespoke solutions for your specific needs, using the perfect mix of tailor-made and out-of-the-box solutions.</p>"
+        },
         "projectShowcase": {
           "selectedProjects": "SELECTED PROJECTS",
           "project1": {
@@ -217,6 +235,10 @@
         "hero": {
           "title": "Digital Designer &<br> Web&shy;entwickler",
           "description": "Ich bringe ihr Unternehmen zum Strahlen, mit einer Website, die <span class='hidden md:inline'>Ihr Wahres Potential audrückt und </span>so großartig ist, wie das, was Sie tun."
+        },
+        "about": {
+          "title": "ÜBER MICH",
+          "description": "<p class='leading-relaxed'>Ich bin Julius Blezinger, autodidaktischer Web-Designer und -Entwickler. Ich lebe seit sechs Jahren in Berlin und habe drei Jahre Erfahrung in der Frontend-Webentwicklung und über ein Jahr in der Full-Stack-Webentwicklung gesammelt.</p><br><p class='leading-relaxed'>Mein bevorzugter Stack ist die Arbeit mit Vue.js, Ruby und Tailwind CSS, sowie Contentful CMS für Headless CMS Lösungen. </p><br><p class='leading-relaxed'>Ich konzentriere mich darauf, eng mit Ihnen als Kunden zusammenzuarbeiten und maßgeschneiderte Lösungen für Ihre spezifischen Bedürfnisse zu entwickeln, wobei ich die perfekte Mischung aus maßgeschneiderten und sofort einsetzbaren Lösungen verwende.</p>"
         },
         "projectShowcase": {
           "selectedProjects": "AUSGEWÄHLTE PROJEKTE",

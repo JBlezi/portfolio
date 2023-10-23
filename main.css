@@ -510,6 +510,21 @@ button {
   transition: ease 1500ms;
 }
 
+.portrait-wrapper {
+  position: relative;
+}
+
+.portrait-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(241, 245, 255, 0.00) 0%, #F1F5FF 81.77%);  pointer-events: none; /* Makes sure the overlay doesn't interfere with any interactions with the image */
+}
+
+
 
 
 /* ------------------------------ */
