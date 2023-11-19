@@ -17,20 +17,25 @@ const app = Vue.createApp({
       videoUrl: 'https://www.youtube.com/embed/NYzqGc2xBaw?autoplay=1&start=3921',
       currentSection: '',
       technologies: [],
+      technologies2: [],
       VueLogo: 'images/vuejs.svg',
       ContentfulLogo: 'images/Contentful_Logo.svg',
       NetlifyLogo: 'images/Netlify_logo.png',
       FigmaLogo: 'images/figma-logo.svg',
-      activeTech: 'figma'  // Default active technology
+      activeTech: 'figma',  // Default active technology
+      activeTech2: 'react',
+      ReactLogo: 'images/ReactLogoTransparent.png',
+      TailwindLogo: 'images/TailwindLogoTransparent.png',
+      GitHubLogo: 'images/GitHubLogoTransparent.png',
     };
   },
   created() {
-      this.updateTechnologies(); // Set the initial value of the technologies array
+    this.updateTechnologies()
   },
   watch: {
       currentLanguage() {
           this.$i18n.locale = this.currentLanguage; // Change the i18n locale
-          this.updateTechnologies(); // Update the technologies translations
+          this.updateTechnologies()
       }
   },
   methods: {
@@ -45,32 +50,56 @@ const app = Vue.createApp({
       localStorage.setItem('language', language);
     },
     updateTechnologies() {
-        this.technologies = [
+      if (document.body.id === 'newgen-festival') {
+          this.technologies = [
+              {
+                  id: 'figma',
+                  name: this.$t('technologies.figma.name'),
+                  picture: this.FigmaLogo,
+                  description: this.$t('technologies.figma.description')
+              },
+              {
+                  id: 'vue',
+                  name: this.$t('technologies.vue.name'),
+                  picture: this.VueLogo,
+                  description: this.$t('technologies.vue.description')
+              },
+              {
+                  id: 'contentful',
+                  name: this.$t('technologies.contentful.name'),
+                  picture: this.ContentfulLogo,
+                  description: this.$t('technologies.contentful.description')
+              },
+              {
+                  id: 'netlify',
+                  name: this.$t('technologies.netlify.name'),
+                  picture: this.NetlifyLogo,
+                  description: this.$t('technologies.netlify.description')
+              }
+          ];
+      }
+      if (document.body.id === 'frontend-mentor') {
+          this.technologies2 = [
             {
-                id: 'figma',
-                name: this.$t('technologies.figma.name'),
-                picture: this.FigmaLogo,
-                description: this.$t('technologies.figma.description')
+              id: 'react',
+              name: this.$t('technologies.react.name'),
+              picture: this.ReactLogo,
+              description: this.$t('technologies.react.description')
             },
             {
-                id: 'vue',
-                name: this.$t('technologies.vue.name'),
-                picture: this.VueLogo,
-                description: this.$t('technologies.vue.description')
+              id: 'tailwind',
+              name: this.$t('technologies.tailwind.name'),
+              picture: this.TailwindLogo,
+              description: this.$t('technologies.tailwind.description')
             },
             {
-                id: 'contentful',
-                name: this.$t('technologies.contentful.name'),
-                picture: this.ContentfulLogo,
-                description: this.$t('technologies.contentful.description')
+              id: 'github',
+              name: this.$t('technologies.github.name'),
+              picture: this.GitHubLogo,
+              description: this.$t('technologies.github.description')
             },
-            {
-                id: 'netlify',
-                name: this.$t('technologies.netlify.name'),
-                picture: this.NetlifyLogo,
-                description: this.$t('technologies.netlify.description')
-            }
-        ];
+          ];
+      }
     },
     initializeLanguage() {
       // Check if the language preference is stored in local storage
@@ -81,6 +110,7 @@ const app = Vue.createApp({
       }
     },
   },
+
   mounted() {
     this.initializeLanguage();
 

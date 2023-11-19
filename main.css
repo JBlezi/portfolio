@@ -13,7 +13,7 @@ body {
   background: #F1F5FF;
   margin: 0 auto;
   padding: 0;
-  max-width: 1500px;
+  max-width: 1400px;
 }
 
 button {
@@ -347,6 +347,7 @@ button {
   transition: 0.15s ease-in;
 }
 
+
 .thumbnail {
   height: 25vh;
   cursor: pointer;
@@ -522,6 +523,14 @@ button {
   right: 0;
   bottom: 0;
   background: linear-gradient(180deg, rgba(241, 245, 255, 0.00) 0%, #F1F5FF 81.77%);  pointer-events: none; /* Makes sure the overlay doesn't interfere with any interactions with the image */
+}
+
+.project-image-mentor img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-image-mentor:hover img {
+  transform: scale(1.05); /* Scales the image up to 105% of its original size */
 }
 
 

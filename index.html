@@ -34,7 +34,7 @@
               <button @click="toggleLanguage('de')" :class="{ active: currentLanguage === 'de' }">DE</button>
               <!-- Your other content here -->
             </div>
-            <a href='contact.html' class='btn btn-desert btn-b-t md:p-4 p-2 rounded-full'>{{ $t('navbar.contact') }}</a>
+            <a href='mailto:info@jbdesign.dev' class='btn btn-desert btn-b-t md:p-4 p-2 rounded-full'>{{ $t('navbar.contact') }}</a>
           </div>
         </div>
       </div>
@@ -76,6 +76,24 @@
         <h2 class="text-2xl md:font-bold mb-10 lg:text-4xl">{{ $t('projectShowcase.selectedProjects') }}</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
+          <a href="frontend-mentor.html" class="block mb-10">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image bg-white">
+                  <img src="images/FrontendMentorLogoTransparent.png" alt="Frontend Mentor Logo" class=" object-contain">
+                  <div class="overlay hidden md:block">
+                    <img src="images/FrontendMentorRestCountries.png" alt="Project 2" class="overlay-image object-cover">
+                  </div>
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl">FRONTEND MENTOR CHALLENGES</h3>
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl text-right text-black">{{ $t('projectShowcase.project4.category') }}</h3>
+                </div>
+              </div>
+            </div>
+          </a>
           <a href="newgen-festival.html" class="block mb-10">
             <div class="aspect-video h-auto w-auto">
               <div class="flex flex-col justify-end">
@@ -159,8 +177,8 @@
             </a>
           </div>
           <div class="h-16 w-16 m-4 p-2">
-            <a href="https://dribbble.com/Goldappel" target="_blank" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
-              <i class="fab fa-dribbble self-center text-sm"></i>
+            <a href="https://www.frontendmentor.io/profile/JBlezi" target="_blank" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+              <img src="images/frontend-mentor-seeklogo.com.svg" alt="" class="h-4 w-4 self-center my-auto">
             </a>
           </div>
           <div class="h-16 w-16 m-4 p-2">
@@ -170,7 +188,11 @@
           </div>
         </div>
         <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">{{ $t('socialContact.lookingForDev') }}</p>
-
+        <div class='wrap'>
+          <div class='fill-wrap'>
+            <a href='mailto:info@jbdesign.dev' class='btn btn-desert btn-b-t lg:text-4xl p-4 md:p-6 rounded-full'>{{ $t('socialContact.getInTouch') }}</a>
+          </div>
+        </div>
 
         <a href="#top" class="floating-btn z-30" v-if="currentSection !== 'hero'" id="floating-button">
           <i class="fas fa-chevron-up"></i>
@@ -197,11 +219,11 @@
         },
         "hero": {
           "title": "Digital Designer &<br> Web Developer",
-          "description": "My goal is to make your business shine <span class='hidden md:inline'>and bring out its true potential,</span> by giving you a website that is as great as your business."
+          "description": "I work with clients to create beautiful websites.  Contact me for custom solutions to your personal <span class='hidden md:inline'>portfolio, blog, festival or company</span> website."
         },
         "about": {
           "title": "ABOUT ME",
-          "description": "<p class='leading-relaxed'>I am Julius Blezinger, self taught Web Designer and Developer. I have been living in Berlin for six years now gaining three years experience in Frontend Web Development and over one year in Full Stack Web Development.</p><br><p class='leading-relaxed'>My preferred stack is working with Vue.js, Ruby and Tailwind CSS, as well as Contentful CMS for Headless CMS solutions. </p><br><p class='leading-relaxed'>My focus is on working tightly with you as my client and creating bespoke solutions for your specific needs, using the perfect mix of tailor-made and out-of-the-box solutions.</p>"
+          "description": "<p class='leading-relaxed'>I am Julius Blezinger, LeWagon Fullstack Web Development Bootcamp graduate and Freelance Web Developer with 2 years experience in Frontend Development. </p><br><p class='leading-relaxed'>I work with popular Javascript frameworks React and Vue to create websites from Design to Code to Deployment in close communication with my clients. </p><br><p class='leading-relaxed'>With a strong focus on lifelong learning I enjoy challenging myself to learn new technologies and gain new perspectives on every project I engage with.</p><br><p class='leading-relaxed'>I am looking forward to work with you.</p>"
         },
         "projectShowcase": {
           "selectedProjects": "SELECTED PROJECTS",
@@ -216,6 +238,10 @@
           "project3": {
             "title": "BERLIN NEWGEN CHINESE FILM FESTIVAL",
             "category": "WEB DEVELOPMENT"
+          },
+          "project4": {
+            "title": "BERLIN NEWGEN CHINESE FILM FESTIVAL",
+            "category": "FRONTEND DEVELOPMENT"
           }
         },
         "socialContact": {
@@ -233,11 +259,11 @@
         },
         "hero": {
           "title": "Digital Designer &<br> Web&shy;entwickler",
-          "description": "Ich bringe ihr Unternehmen zum Strahlen, mit einer Website, die <span class='hidden md:inline'>Ihr Wahres Potential audrückt und </span>so großartig ist, wie das, was Sie tun."
+          "description": "Ich arbeite mit Kunden zusammen, um schöne Websites zu erstellen.  Kontaktieren Sie mich für individuelle Lösungen für Ihre persönliche Website."
         },
         "about": {
           "title": "ÜBER MICH",
-          "description": "<p class='leading-relaxed'>Ich bin Julius Blezinger, autodidaktischer Web-Designer und -Entwickler. Ich lebe seit sechs Jahren in Berlin und habe drei Jahre Erfahrung in der Frontend-Webentwicklung und über ein Jahr in der Full-Stack-Webentwicklung gesammelt.</p><br><p class='leading-relaxed'>Mein bevorzugter Stack ist die Arbeit mit Vue.js, Ruby und Tailwind CSS, sowie Contentful CMS für Headless CMS Lösungen. </p><br><p class='leading-relaxed'>Ich konzentriere mich darauf, eng mit Ihnen als Kunden zusammenzuarbeiten und maßgeschneiderte Lösungen für Ihre spezifischen Bedürfnisse zu entwickeln, wobei ich die perfekte Mischung aus maßgeschneiderten und sofort einsetzbaren Lösungen verwende.</p>"
+          "description": "<p class='leading-relaxed'>Ich bin Julius Blezinger, Absolvent des LeWagon Fullstack Web Development Bootcamp und freiberuflicher Webentwickler mit 2 Jahren Erfahrung in der Frontend-Entwicklung. </p><br><p class='leading-relaxed'>Ich arbeite mit den populären Javascript-Frameworks React und Vue, um Webseiten vom Design über den Code bis zur Bereitstellung in enger Kommunikation mit meinen Kunden zu erstellen.  </p><br><p class='leading-relaxed'>Mit einem starken Fokus auf lebenslangem Lernen liebe ich die Herausforderung, bei jedem Projekt, das ich annehme neue Technologien zu erlernen und neue Perspektiven zu gewinnen.</p><br><p class='leading-relaxed'>Ich freue mich auf die Zusammenarbeit</p>"
         },
         "projectShowcase": {
           "selectedProjects": "AUSGEWÄHLTE PROJEKTE",
@@ -252,6 +278,10 @@
           "project3": {
             "title": "BERLIN NEWGEN CHINESE FILM FESTIVAL",
             "category": "WEB-ENTWICKLUNG"
+          },
+          "project4": {
+            "title": "BERLIN NEWGEN CHINESE FILM FESTIVAL",
+            "category": "FRONTEND ENTWICKLUNG"
           }
         },
         "socialContact": {

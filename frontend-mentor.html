@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/cool_julius1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <title>Frontend Mentor</title>
+    <style>
+      /* Additional custom styles can be added here */
+    </style>
+  </head>
+
+  <body class="font-semibold" id="frontend-mentor">
+    <div id="app">
+      <!-- Navbar -->
+      <nav class="p-4 text-black" style="background-color: #F1F5FF">
+        <div class="flex items-center justify-between lg:mx-10 lg:mt-10">
+          <a href="index.html" class="flex flex-row">
+            <img src="images/cool_julius1.png" alt="Your Logo" class="lg:h-12 h-10 rounded-full">
+            <span class="my-2 md:ml-8 ml-2 md:text-3xl logo">J B Design — 23</span>
+          </a>
+   <!--        <div>
+            <img src="images/Goldappel Design Logo.png" alt="Your Logo" class="lg:h-12 h-6">
+          </div> -->
+          <div class='wrap flex flex-row'>
+            <div class='fill-wrap'>
+              <div class="flex flex-row mx-4 lg:text-xl">
+                <button @click="toggleLanguage('en')" :class="{ active: currentLanguage === 'en' }">EN<span style="color:black">/</span></button>
+                <button @click="toggleLanguage('de')" :class="{ active: currentLanguage === 'de' }">DE</button>
+                <!-- Your other content here -->
+              </div>
+              <a href='index.html' class='md:p-4 p-2 md:text-2xl lg:text-3xl md:font-semibold'>HOME</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section class="md:pt-20 md:px-20 lg:px-0 md:-mt-20" id="hero-section">
+        <div class="hero-image overflow-hidden">
+          <a href="https://www.bngcff.com/" target="_blank"><img src="images/Frontend-mentor-home.png" alt="bia" class="aspect-video hero object-cover w-full"></a>
+        </div>
+        <div class="p-10 md:p-0">
+          <div class="flex flex-row justify-between lg:px-20 mb-10">
+            <h1 class="md:text-2xl text-lg md:my-10 mb-6 lg:text-4xl">Frontend Mentor Challenges</h1>
+            <h2 class="md:text-2xl text-lg md:my-10 text-gray-500 text-right lg:text-4xl">{{ $t('hero.category') }}</h2>
+          </div>
+          <p class="lg:px-20 md:text-justify md:text-lg lg:text-2xl" v-html="$t('hero.description')">
+
+            </p>
+        </div>
+      </section>
+
+    <!-- Project Showcase Section -->
+    <section class="p-6 md:pt-20 md:pb-10" id="project-showcase-section">
+      <div class="md:mx-10">
+        <h2 class="text-2xl md:font-bold mb-10 lg:text-4xl">{{ $t('projectShowcase.selectedProjects') }}</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          <a href="https://jblezi.github.io/rest-countries-api/" target="_blank" class="block mb-10">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image project-image-mentor">
+                  <img src="images/FrontendMentorRestCountries.png" alt="NewGen Logo" class=" object-cover">
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl">{{ $t('projectShowcase.project1.title') }}</h3>
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl text-right text-black">{{ $t('projectShowcase.project4.category') }}</h3>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="https://jblezi.github.io/interactive-comment-section/" target="_blank" class="block mb-10">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image project-image-mentor">
+                  <img src="images/FrontendMentorComments.png" alt="NewGen Logo" class=" object-cover">
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl">{{ $t('projectShowcase.project2.title') }}</h3>
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl text-right text-black">{{ $t('projectShowcase.project3.category') }}</h3>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="https://jblezi.github.io/newsletter-signup-with-success-message/" target="_blank" class="block mb-10">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image project-image-mentor">
+                  <img src="images/FrontendMentorNewsletter.png" alt="BIA Front Page" class=" object-cover">
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl">{{ $t('projectShowcase.project3.title') }}</h3>
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl text-right text-black"></h3>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="https://jblezi.github.io/Frontend-Mentor-Challenge-1/" target="_blank" class="block mb-10">
+            <div class="aspect-video h-auto w-auto">
+              <div class="flex flex-col justify-end">
+
+                <div class="project-image project-image-mentor">
+                  <img src="images/FrontendMentorQRCode.png" alt="BIA Front Page" class=" object-cover">
+                </div>
+
+                <div class="flex justify-between mt-2">
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl">{{ $t('projectShowcase.project4.title') }}</h3>
+                  <h3 class="md:text-lg font-NORMAL lg:text-2xl text-right text-black"></h3>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+      <!-- Project Showcase Section -->
+      <section class="md:px-20 px-10 mt-32" id="project-showcase-section">
+        <h2 class="md:text-2xl text-xl my-10 lg:text-4xl">{{ $t('presentation.title') }}</h2>
+        <div class="my-10">
+          <div class="flex flex-col md:flex-row w-full justify-between">
+            <div class="border-black border-t-2 border-l-2 border-r-2 md:border-b-2 rounded-t-2xl h-24 md:h-auto md:w-1/3 flex technologies" v-for="(tech, index) in technologies2"
+                :key="tech.id"
+                :class="{'no-sides-border': index === 1, 'active': tech.id === activeTech2 }"
+                @click="activeTech2 = tech.id">
+              <img :src="tech.picture" alt="" class="w-1/2 m-auto block">
+            </div>
+          </div>
+          <div class="border-black border-r-2 border-l-2 border-b-2 rounded-b-2xl md:text-2xl text-lg p-10 bg-white">
+            <!-- Display the description of the active technology -->
+            {{ technologies2.find(tech => tech.id === activeTech2).description }}
+          </div>
+        </div>
+      </section>
+
+
+   <!-- Social Media and Contact Section -->
+   <section class="pb-20 px-4 flex flex-col relative items-center overflow-hidden justify-center" style="background-color: #F1F5FF">
+    <div class="flex justify-center mt-32 h-24">
+      <div class="h-16 w-16 m-4 p-2">
+        <a href="https://www.figma.com/@jblezi" target="_blank" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+          <i class="fab fa-figma self-center text-sm"></i>
+        </a>
+      </div>
+      <div class="h-16 w-16 m-4 p-2">
+        <a href="https://www.frontendmentor.io/profile/JBlezi" target="_blank" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+          <img src="images/frontend-mentor-seeklogo.com.svg" alt="" class="h-4 w-4 self-center my-auto">
+        </a>
+      </div>
+      <div class="h-16 w-16 m-4 p-2">
+        <a href="https://github.com/JBlezi" target="_blank" class="zoom text-xl rounded-full border border-black h-12 w-12 flex justify-center">
+          <i class="fab fa-github self-center text-sm"></i>
+        </a>
+      </div>
+    </div>
+    <p class="text-4xl md:text-6xl text-center my-16 z-10 font-light">{{ $t('socialContact.lookingForDev') }}</p>
+    <div class='wrap'>
+      <div class='fill-wrap'>
+        <a href='contact.html' class='btn btn-desert btn-b-t lg:text-4xl p-4 md:p-6 rounded-full'>{{ $t('socialContact.getInTouch') }}</a>
+      </div>
+    </div>
+
+    <a href="#top" class="floating-btn z-30" v-if="currentSection !== 'hero-section'" id="floating-button">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <div class="hire-me">
+      <p class="font-semibold">HIRE ME</h1>
+    </div>
+  </section>
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-i18n@9.1.7/dist/vue-i18n.global.js"></script>
+    <script>
+      const enMessages = {
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "CONTACT"
+        },
+        "hero": {
+          "title": "Frontend Mentor",
+          "category": "Web Development",
+          "description": "<a href='https://www.frontendmentor.io/home' target='_blank' class='link-styles'>Frontend Mentor</a> is a Platform for Frontend Devlopers to work on real projects, showcase their talents and get valuable Feedback from other Web Developers. The platform also encompasses a job portal to connect with potential employers and get recognition for your work. I have taken up Challenges on Frontend Mentor whenever I had time to build the community and further my skillset."
+        },
+        "projectShowcase": {
+          "selectedProjects": "SELECTED CHALLENGES",
+          "project1": {
+            "title": "REST COUNTRIES API CASE",
+            "category": ""
+          },
+          "project2": {
+            "title": "INTERACTIVE COMMENT SECTION",
+            "category": ""
+          },
+          "project3": {
+            "title": "NEWSLETTER SIGNUP",
+            "category": ""
+          },
+          "project4": {
+            "title": "SIMPLE QR CODE CARD",
+            "category": ""
+          }
+        },
+        "technologies": {
+            "react": {
+                "name": "React",
+                "description": "Doing the Challenges on Frontend Mentor I am mostly using the popular React framework for functionalities and app behaviour control"
+            },
+            "tailwind": {
+                "name": "Tailwind CSS",
+                "description": "For powerful and intuitive style control I mostly use Tailwind CSS either over CDN for small projects or with a local build if I need more control"
+            },
+            "github": {
+                "name": "Github",
+                "description": "For deploying my live apps I use Github pages with the gh-pages setup and the npm run deploy command for React projects or with a simple deploy from main branch for small projects"
+            }
+        },
+        "presentation": {
+          "title": "Tech Stack for these projects",
+          "description": "At the end of the program you get the chance to present your project in front of the whole batch. Here I want to take the opportunity and give many thanks to my great team members Luciano, Gesa & Chloe. We poured our heart and our sweat into this project from start to finish and were able to deliver something truly great!"
+        },
+        "link": {
+          "title": "The final Website",
+          "button": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Visit the Berlin NewGen Chinese Film Festival Website</a>"
+        },
+        "socialContact": {
+          "lookingForDev": "Looking for a Web Developer?",
+          "getInTouch": "GET IN TOUCH",
+          "hireMe": "HIRE ME"
+        }
+      };
+      const deMessages = {
+        "navbar": {
+          "logo": "J B Design — 23",
+          "contact": "KONTAKT"
+        },
+        "hero": {
+          "title": "Livecode Community",
+          "category": "Webentwicklung",
+          "description": "<a href='https://www.frontendmentor.io/home' target='_blank' class='link-styles'>Frontend Mentor</a> ist eine Plattform für Frontend-Entwickler, um an echten Projekten zu arbeiten, ihre Talente zu präsentieren und wertvolles Feedback von anderen Web-Entwicklern zu erhalten. Die Plattform umfasst auch ein Jobportal, um mit potenziellen Arbeitgebern in Kontakt zu treten und Anerkennung für die eigene Arbeit zu erhalten. Ich habe Herausforderungen auf Frontend Mentor angenommen, wann immer ich Zeit hatte, um die Community aufzubauen und meine Fähigkeiten zu erweitern. "
+        },
+        "projectShowcase": {
+          "selectedProjects": "AUSGEWÄHLTE CHALLENGES",
+          "project1": {
+            "title": "REST COUNTRIES API CASE",
+            "category": ""
+          },
+          "project2": {
+            "title": "INTERAKTIVE KOMMENTARSPALTE",
+            "category": ""
+          },
+          "project3": {
+            "title": "NEWSLETTER ANMELDUNG",
+            "category": ""
+          },
+          "project4": {
+            "title": "EINFACHE QR CODE KARTE",
+            "category": ""
+          }
+        },
+        "technologies": {
+          "react": {
+                "name": "React",
+                "description": "Bei den Herausforderungen auf Frontend Mentor verwende ich hauptsächlich das beliebte React-Framework für Funktionalitäten und die Steuerung des App-Verhaltens"
+            },
+            "tailwind": {
+                "name": "Tailwind CSS",
+                "description": "Für eine leistungsstarke und intuitive Stilkontrolle verwende ich meist Tailwind CSS, entweder über CDN für kleine Projekte oder mit einem lokalen Build, wenn ich mehr Kontrolle brauche"
+            },
+            "github": {
+                "name": "Github",
+                "description": "For deploying my live apps I use Github pages with the gh-pages setup and the npm run deploy command for React projects or with a simple deploy from main branch for small projects"
+            }
+        },
+        "link": {
+          "title": "Die finale Website",
+          "button": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Zur Website von Berlin NewGen Chinese Film Festival</a>"
+        },
+        "presentation": {
+          "title": "Tech Stack für diese Projekte",
+          "description": "Am Ende des Programms hat man die Möglichkeit, sein Projekt vor der gesamten Gruppe zu präsentieren. An dieser Stelle möchte ich die Gelegenheit nutzen und mich bei meinen großartigen Teammitgliedern Luciano, Gesa und Chloe herzlich bedanken. Wir haben von Anfang bis Ende unser Herz in dieses Projekt gesteckt und konnten etwas wirklich Großartiges abliefern!"
+        },
+        "socialContact": {
+          "lookingForDev": "Webentwickler gesucht?",
+          "getInTouch": "KONTAKTIEREN",
+          "hireMe": "MICH EINSTELLEN"
+        }
+      };
+    </script>
+    <script src="app.js" defer></script>
+
+  </body>
+
+</html>
