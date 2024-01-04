@@ -18,6 +18,7 @@ const app = Vue.createApp({
       currentSection: '',
       technologies: [],
       technologies2: [],
+      technologies3: [],
       VueLogo: 'images/vuejs.svg',
       ContentfulLogo: 'images/Contentful_Logo.svg',
       NetlifyLogo: 'images/Netlify_logo.png',
@@ -51,32 +52,32 @@ const app = Vue.createApp({
     },
     updateTechnologies() {
       if (document.body.id === 'newgen-festival') {
-          this.technologies = [
-              {
-                  id: 'figma',
-                  name: this.$t('technologies.figma.name'),
-                  picture: this.FigmaLogo,
-                  description: this.$t('technologies.figma.description')
-              },
-              {
-                  id: 'vue',
-                  name: this.$t('technologies.vue.name'),
-                  picture: this.VueLogo,
-                  description: this.$t('technologies.vue.description')
-              },
-              {
-                  id: 'contentful',
-                  name: this.$t('technologies.contentful.name'),
-                  picture: this.ContentfulLogo,
-                  description: this.$t('technologies.contentful.description')
-              },
-              {
-                  id: 'netlify',
-                  name: this.$t('technologies.netlify.name'),
-                  picture: this.NetlifyLogo,
-                  description: this.$t('technologies.netlify.description')
-              }
-          ];
+        this.technologies = [
+            {
+                id: 'figma',
+                name: this.$t('technologies.figma.name'),
+                picture: this.FigmaLogo,
+                description: this.$t('technologies.figma.description')
+            },
+            {
+                id: 'vue',
+                name: this.$t('technologies.vue.name'),
+                picture: this.VueLogo,
+                description: this.$t('technologies.vue.description')
+            },
+            {
+                id: 'contentful',
+                name: this.$t('technologies.contentful.name'),
+                picture: this.ContentfulLogo,
+                description: this.$t('technologies.contentful.description')
+            },
+            {
+                id: 'netlify',
+                name: this.$t('technologies.netlify.name'),
+                picture: this.NetlifyLogo,
+                description: this.$t('technologies.netlify.description')
+            }
+        ];
       }
       if (document.body.id === 'frontend-mentor') {
           this.technologies2 = [
@@ -100,6 +101,46 @@ const app = Vue.createApp({
             },
           ];
       }
+      if (document.body.id === 'it-law') {
+        this.technologies3 = [
+          {
+            id: 'react',
+            name: this.$t('technologies.react.name'),
+            picture: this.ReactLogo,
+            description: this.$t('technologies.react.description')
+          },
+          {
+            id: 'tailwind',
+            name: this.$t('technologies.tailwind.name'),
+            picture: this.TailwindLogo,
+            description: this.$t('technologies.tailwind.description')
+          },
+          {
+            id: 'github',
+            name: this.$t('technologies.github.name'),
+            picture: this.GitHubLogo,
+            description: this.$t('technologies.github.description')
+          },
+          {
+            id: 'contentful',
+            name: this.$t('technologies.contentful.name'),
+            picture: this.ContentfulLogo,
+            description: this.$t('technologies.contentful.description')
+          },
+          {
+            id: 'figma',
+            name: this.$t('technologies.figma.name'),
+            picture: this.FigmaLogo,
+            description: this.$t('technologies.figma.description')
+          },
+          {
+            id: 'netlify',
+            name: this.$t('technologies.netlify.name'),
+            picture: this.NetlifyLogo,
+            description: this.$t('technologies.netlify.description')
+          }
+        ];
+    }
     },
     initializeLanguage() {
       // Check if the language preference is stored in local storage

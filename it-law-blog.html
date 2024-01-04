@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <title>Berlin NewGen Chinese Film Festival</title>
+    <title>IT-Recht Blog</title>
     <style>
       /* Additional custom styles can be added here */
     </style>
   </head>
 
-  <body class="font-semibold" id="newgen-festival">
+  <body class="font-semibold" id="it-law">
     <div id="app">
       <!-- Navbar -->
       <nav class="p-4 text-black" style="background-color: #F1F5FF">
@@ -43,11 +43,11 @@
 
       <section class="md:pt-20 md:px-20 lg:px-0 md:-mt-20" id="hero-section">
         <div class="hero-image overflow-hidden">
-          <a href="https://www.bngcff.com/" target="_blank"><img src="images/ng23.gif" alt="bia" class="aspect-video hero object-cover w-full"></a>
+          <a href="https://timely-crumble-c6bfa9.netlify.app/" target="_blank"><img src="images/it-law-blog.png" alt="bia" class="aspect-video hero object-cover w-full"></a>
         </div>
         <div class="p-10 md:p-0">
           <div class="flex flex-row justify-between lg:px-20 mb-10">
-            <h1 class="md:text-2xl text-lg md:my-10 mb-6 lg:text-4xl">Berlin NewGen Chinese Film Festival</h1>
+            <h1 class="md:text-2xl text-lg md:my-10 mb-6 lg:text-4xl">{{ $t('hero.title') }}</h1>
             <h2 class="md:text-2xl text-lg md:my-10 text-gray-500 text-right lg:text-4xl">{{ $t('hero.category') }}</h2>
           </div>
           <p class="lg:px-20 md:text-justify md:text-lg lg:text-2xl" v-html="$t('hero.description')">
@@ -61,16 +61,16 @@
         <h2 class="md:text-2xl text-xl my-10 lg:text-4xl">{{ $t('presentation.title') }}</h2>
         <div class="my-10">
           <div class="flex flex-col md:flex-row w-full justify-between">
-            <div class="border-black border-t-2 border-l-2 border-r-2 md:border-b-2 rounded-t-2xl h-24 md:h-auto md:w-1/4 flex technologies" v-for="(tech, index) in technologies"
+            <div class="border-black border-t-2 border-l-2 border-r-2 md:border-b-2 rounded-t-2xl h-24 md:h-auto md:w-1/4 flex technologies" v-for="(tech, index) in technologies3"
                 :key="tech.id"
-                :class="{'no-sides-border': index === 1, 'no-right-border': index === 2, 'active': tech.id === activeTech }"
-                @click="activeTech = tech.id">
+                :class="{'no-sides-border': index === 1, 'no-right-border': index === 2 || index === 3 || index === 4, 'active': tech.id === activeTech2 }"
+                @click="activeTech2 = tech.id">
               <img :src="tech.picture" alt="" class="w-1/2 m-auto block">
             </div>
           </div>
           <div class="border-black border-r-2 border-l-2 border-b-2 rounded-b-2xl md:text-2xl text-lg p-10 bg-white">
             <!-- Display the description of the active technology -->
-            {{ technologies.find(tech => tech.id === activeTech).description }}
+            {{ technologies3.find(tech => tech.id === activeTech2).description }}
           </div>
         </div>
       </section>
@@ -126,18 +126,26 @@
     <script>
       const enMessages = {
         "navbar": {
-          "logo": "J B Design — 23",
+          "logo": "J B Design — 24",
           "contact": "CONTACT"
         },
         "hero": {
-          "title": "Livecode Community",
-          "category": "Web Development",
-          "description": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Berlin NewGen Chinese Film Festival</a> is a Berlin-based nonprofit organization dedicated to celebrating outstanding Chinese cinema alongside both emerging and established filmmakers, film enthusiasts, industry professionals, and global audiences. <br><br> The Festival needed a new Website, that enabled key functionalities like depicting all the necessary information for Movie Screenings during the Festival, Special Events and general information while encapsulating the spirit of the Festival. Another important aspect was the implementation of an easy to use Content Management System. "
+          "title": "IT-Law Blog (Beta)",
+          "category": "Full Stack Web Development",
+          "description": "<a href='https://timely-crumble-c6bfa9.netlify.app/' target='_blank' class='link-styles'>IT-Law Blog</a> is a Blog Website designed for Biernath Legal, a lawyer specialized in IT-Law and based in Berlin. The blog is used to publish thoughts and new developments in the world of Law in relation to artificial intelligence and other technological developments.<br><br> The website uses a simple frontend to display the Blog articles, which can be added and managed with contentful, a headless CMS. To further enrich the website, it also fetches relevant IT-Law related RSS Feeds and displays them on the site. "
         },
         "technologies": {
-            "vue": {
-                "name": "Vue.js",
-                "description": "The whole site was set up using Vue.js frameworks versatile Single Page Application Structure, keeping the HTML as light as possible and using a router to dynamically swap out content of different pages."
+            "react": {
+                "name": "React",
+                "description": "The blog is coded using an Single Page Application with create-react-app"
+            },
+            "github": {
+                "name": "Github",
+                "description": "Github was used as a versioning tool for this project. The repository can be found at https://github.com/JBlezi/it-law"
+            },
+            "tailwind": {
+                "name": "Tailwind CSS",
+                "description": "For powerful and intuitive style control I mostly use Tailwind CSS utility classes, as well as for darkmode implementation"
             },
             "contentful": {
                 "name": "Contentful",
@@ -145,7 +153,7 @@
             },
             "netlify": {
                 "name": "Netlify",
-                "description": "Netlify is one of the biggest hosting providers worldwide and is especially useful for more lightweight webpages that don't need to sustain their own backend, such as Berlin NewGen. Netlify offers ease of use in combination with a generous free hosting plan and push to deploy via GitHub."
+                "description": "I chose Netlify to host this project due to its ease of use, generous free hosting plan and most of all its capability of hosting serverless functions"
             },
             "figma": {
                 "name": "figma",
@@ -157,8 +165,8 @@
           "description": "At the end of the program you get the chance to present your project in front of the whole batch. Here I want to take the opportunity and give many thanks to my great team members Luciano, Gesa & Chloe. We poured our heart and our sweat into this project from start to finish and were able to deliver something truly great!"
         },
         "link": {
-          "title": "The live Website",
-          "button": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Visit the Berlin NewGen Chinese Film Festival Website</a>"
+          "title": "The live Website (Beta)",
+          "button": "<a href='https://timely-crumble-c6bfa9.netlify.app/' target='_blank' class='link-styles'>Visit the IT-Law Blog Website</a>"
         },
         "socialContact": {
           "lookingForDev": "Looking for a Web Developer?",
@@ -168,35 +176,43 @@
       };
       const deMessages = {
         "navbar": {
-          "logo": "J B Design — 23",
+          "logo": "J B Design — 24",
           "contact": "KONTAKT"
         },
         "hero": {
-          "title": "Livecode Community",
-          "category": "Webentwicklung",
-          "description": "Das <a href='https://www.bngcff.com/' target='_blank' class='link-styles'>NewGen Chinese Film Festival</a> ist eine gemeinnützige Organisation mit Sitz in Berlin, die es sich zur Aufgabe gemacht hat, herausragendes chinesisches Kino mit aufstrebenden und etablierten Filmemachern, Filmliebhabern, Fachleuten aus der Branche und dem weltweiten Publikum zu feiern. <br><br> Das Festival benötigte eine neue Website, die wichtige Funktionen wie die Darstellung aller notwendigen Informationen zu den Filmvorführungen während des Festivals, zu besonderen Veranstaltungen und allgemeinen Informationen bietet und gleichzeitig den Geist des Festivals widerspiegelt. Ein weiterer wichtiger Aspekt war die Implementierung eines einfach zu bedienenden Content Management Systems. "
+          "title": "IT-Recht Blog (Beta)",
+          "category": "Full Stack Webentwicklung",
+          "description": "Das <a href='https://timely-crumble-c6bfa9.netlify.app/' target='_blank' class='link-styles'> IT-Recht Blog</a> ist eine Blog-Website von Biernath Legal, einem auf IT-Recht spezialisierten Rechtsanwalt mit Sitz in Berlin. Der Blog wird genutzt, um Gedanken und neue Entwicklungen in der Welt des Rechts in Bezug auf künstliche Intelligenz und andere technologische Entwicklungen zu veröffentlichen.<br><br> Die Website nutzt ein einfaches Frontend, um die Blog-Artikel anzuzeigen, die mit contentful, einem headless CMS, hinzugefügt und verwaltet werden können. Um die Website weiter zu bereichern, werden auch relevante RSS-Feeds zum Thema IT-Recht abgerufen und auf der Website angezeigt."
         },
         "technologies": {
-            "vue": {
-                "name": "Vue.js", // Translate if needed
-                "description": "Die gesamte Website wurde unter Verwendung des Vue.js-Frameworks mit vielseitiger Single-Page-Application-Struktur aufgebaut, wobei der HTML-Code so leicht wie möglich gehalten und ein Router verwendet wurde, um den Inhalt der verschiedenen Seiten dynamisch auszutauschen." // Translated description
+          "react": {
+                "name": "React",
+                "description": "Der Blog ist mit einer Single Page Application mit create-react-app entwickelt."
+            },
+            "github": {
+                "name": "Github",
+                "description": "Github wurde als Versionierungswerkzeug für dieses Projekt verwendet. Das Repository kann unter https://github.com/JBlezi/it-law gefunden werden."
+            },
+            "tailwind": {
+                "name": "Tailwind CSS",
+                "description": "Für eine leistungsstarke und intuitive Stilkontrolle verwende ich hauptsächlich die Tailwind-CSS-Utility-Klassen, sowie für die Darkmode-Implementierung"
             },
             "contentful": {
-                "name": "Contentful", // Translate if needed
-                "description": "Contentful ist ein leistungsfähiges Headless Content Management System, das einfach zu bedienen und leicht zu pflegen ist. Vor allem die sehr einfache Implementierung war ein wichtiger Faktor bei der Entscheidung für Contentful gegenüber anderen Alternativen. Die Pflege aller relevanten Informationen auf der Website kann nun problemlos von Mitarbeitern des Festivals übernommen werden und erfordert keine Interaktion mit der Codebasis." // Translated description
+                "name": "Contentful",
+                "description": "Contentful ist ein leistungsfähiges Headless Content Management System, das einfach zu bedienen und leicht zu pflegen ist. Vor allem die sehr einfache Implementierung war ein wichtiger Faktor bei der Entscheidung für Contentful gegenüber anderen Alternativen. Die Pflege aller relevanten Informationen auf der Website kann nun problemlos von den Festivalmitarbeitern übernommen werden und erfordert keinen Eingriff in die Codebasis."
             },
             "netlify": {
-                "name": "Netlify", // Translate if needed
-                "description": "Netlify ist einer der größten Hosting-Provider weltweit und eignet sich besonders für leichtgewichtige Webseiten, die kein eigenes Backend benötigen, wie z.B. Berlin NewGen. Netlify bietet eine einfache Bedienung in Kombination mit einem großzügigen kostenlosen Hosting-Plan und Push-Deployment über GitHub." // Translated description
+                "name": "Netlify",
+                "description": "Ich habe mich für Netlify entschieden, um dieses Projekt zu hosten, weil es einfach zu bedienen ist, einen großzügigen kostenlosen Hosting-Plan bietet und vor allem die Möglichkeit bietet, serverlose Funktionen zu hosten"
             },
             "figma": {
                 "name": "figma",
-                "description": "fFigma ist mittlerweile eines der allgegenwärtigsten Designwerkzeuge in der modernen Webentwicklung und auch das Design für die Berlin NewGen Website wurde in Figma erstellt. Insbesondere die Übertragung des Designs in den Code direkt in Figma erweist sich bei der Arbeit mit Farbverläufen und Farben als sehr nützlich."
+                "description": "Figma ist mittlerweile eines der allgegenwärtigsten Designwerkzeuge in der modernen Webentwicklung und auch das Design für die Berlin NewGen Website wurde in Figma erstellt. Insbesondere die Übertragung des Designs in den Code direkt in Figma erweist sich bei der Arbeit mit Farbverläufen und Farben als sehr nützlich."
             }
         },
         "link": {
-          "title": "Die live Website",
-          "button": "<a href='https://www.bngcff.com/' target='_blank' class='link-styles'>Zur Website von Berlin NewGen Chinese Film Festival</a>"
+          "title": "Die live Website (Beta)",
+          "button": "<a href='https://timely-crumble-c6bfa9.netlify.app/' target='_blank' class='link-styles'>Zur Website des IT-Recht Blogs</a>"
         },
         "presentation": {
           "title": "Tech Stack für dieses Projekt",
